@@ -2,7 +2,7 @@
 	"version": "0.0.1",
 	"workspace": "VS Code Boilerplate",
 	"environment": {
-		"showCommands": true,
+		"showCommands": false,
 		"externalDepDir": "chalet_external",
 		"path": [
 			"${externalDepDir}/sfml/build/${configuration}/lib"

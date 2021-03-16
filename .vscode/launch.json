@@ -5,7 +5,7 @@
 			"name": "GDB/LLDB",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/build/Debug/${workspaceRootFolderName}",
+			"program": "${workspaceFolder}/build/Debug/sfml-app",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
@@ -20,7 +20,7 @@
 				}
 			],
 			"windows": {
-				"program": "${workspaceFolder}/build/Debug/${workspaceRootFolderName}.exe",
+				"program": "${workspaceFolder}/build/Debug/sfml-app.exe",
 				"MIMode": "gdb",
 				"miDebuggerPath": "C:/mingw32/bin/gdb.exe",
 				"env": {
