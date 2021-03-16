@@ -1,0 +1,178 @@
+{
+	"version": "0.0.1",
+	"workspace": "VS Code Boilerplate",
+	"environment": {
+		"showCommands": false,
+		"path.windows": [
+			"C:/SFML-2.5.1/bin"
+		]
+	},
+	/*"configurations": [
+		{
+			"name": "Release",
+			"optimizations": "3",
+			"linkTimeOptimization": true,
+			"stripSymbols": true
+		},
+		{
+			"name": "Debug",
+			"optimizations": "0",
+			"debugSymbols": true
+		}
+	],*/
+	/*"configurations": [
+		"Release",
+		"Debug"
+	],*/
+	"allProjects": {
+		"language": "C++",
+		"compilerSettings:Cxx": {
+			"cppStandard": "c++17",
+			"rtti": false,
+			"staticLinking": false,
+			"posixThreads": true,
+			"warnings": "strict",
+			"defines:Debug": [
+				"_DEBUG"
+			],
+			"includeDirs": [
+				"vendor"
+			],
+			"libDirs.windows": [
+				"C:/SFML-2.5.1/lib"
+			],
+			"includeDirs.windows": [
+				"C:/SFML-2.5.1/include"
+			],
+			"links:Release": [
+				"sfml-graphics",
+				"sfml-audio",
+				"sfml-network",
+				"sfml-window",
+				"sfml-system"
+			],
+			"links:Debug": [
+				"sfml-graphics-d",
+				"sfml-audio-d",
+				"sfml-network-d",
+				"sfml-window-d",
+				"sfml-system-d"
+			],
+			"links.linux": [
+				"stdc++fs",
+				"X11"
+			],
+			"links.windows": [
+				"stdc++fs",
+				"gdi32"
+			],
+			"macosFrameworkPaths": [
+				"/Library/Frameworks"
+			],
+			"macosFrameworks": [
+				"CoreFoundation"
+			]
+		},
+		"dumpAssembly": false,
+		// "maxJobs": 8,
+		// "maxJobs.rpi": 4,
+		// "compileOptions": [],
+		// "linkerOptions": [],
+		"runDependencies.windows": [
+			"openal32.dll"
+		]
+	},
+	"projects": [
+		{
+			"name": "chalet-vscode-boilerplate",
+			"kind": "desktopApplication",
+			"location": "src",
+			"compilerSettings:Cxx": {
+				"pch": "src/PCH.hpp"
+			},
+			"runProject": true
+		},
+		{
+			"name": "unit-tests",
+			"kind": "consoleApplication",
+			"location": {
+				"include": [
+					"test",
+					"src"
+				],
+				"exclude": "src/Main.cpp"
+			},
+			"compilerSettings:Cxx": {
+				"pch": "src/PCH.hpp"
+			},
+			"runArguments": [
+				"-w","NoTests","-s"
+			],
+			"onlyInConfiguration": [
+				"Release"
+			]
+		}
+	],
+	"externalDependencies": [
+		{
+			"repository": "https://github.com/SFML/SFML.git"
+		}
+	],
+	"bundle": {
+		"appName": "SFML Boilerplate",
+		"shortDescription": "SFML Boilerplate",
+		"longDescription": "SFML Boilerplate",
+		"outDir": "dist",
+		"configuration": "Release",
+		"projects": [
+			"chalet-vscode-boilerplate"
+		],
+		"dependencies": [
+			"content"
+		],
+		"dependencies.windows": [
+			"libgcc_s_dw2-1.dll",
+			"libstdc++-6.dll",
+			"libwinpthread-1.dll",
+			"openal32.dll",
+			"sfml-audio-2.dll",
+			"sfml-graphics-2.dll",
+			"sfml-network-2.dll",
+			"sfml-system-2.dll",
+			"sfml-window-2.dll"
+		],
+		"exclude": [
+			"*.psd",
+			"*.rar",
+			"*.7z",
+			"Thumbs.db",
+			".DS_Store"
+		],
+		"macos": {
+			"bundleName": "SFML Boilerplate",
+			"bundleIdentifier": "com.developer.sfmlboilerplate",
+			"icon": "env/osx/sfml.png",
+			"infoPropertyList": "env/osx/Info.plist.json",
+			"makeDmg": true,
+			"dmgBackground": {
+				"1x": "env/osx/dmg-background.png",
+				"2x": "env/osx/dmg-background@2x.png"
+			},
+			"dylibs": [
+				"libsfml-graphics.2.5",
+				"libsfml-audio.2.5",
+				"libsfml-network.2.5",
+				"libsfml-window.2.5",
+				"libsfml-system.2.5"
+			]
+		},
+		"linux": {
+			"icon": "env/linux/app.png",
+			"desktopEntry": "env/linux/app.desktop"
+		},
+		"windows": {
+			"icon": "env/windows/app.ico",
+			"manifest": "env/windows/app.manifest"
+		}
+	}
+}

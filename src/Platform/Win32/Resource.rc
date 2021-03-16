@@ -1,0 +1,7 @@
+#ifdef _WIN32
+#include "Resource.h"
+
+MANIFEST_RESOURCE_ID RT_MANIFEST "env/windows/app.manifest"
+WIN32_ICON_MAIN ICON "env/windows/app.ico"
+
+#endif

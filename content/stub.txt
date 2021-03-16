@@ -1,0 +1,3 @@
+Note:
+
+Run the 'Build: Production' command to see me get copied into the build folder, since 'content' is defined in env/windows.release.mk!

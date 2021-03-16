@@ -1,0 +1,192 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"windows": {
+		"options": {
+			"env": {
+				"Path": "${config:terminal.integrated.env.windows.Path}"
+			}
+		}
+	},
+	"linux": {
+		"options": {
+			"env": {
+				"PATH": "${config:terminal.integrated.env.linux.PATH}"
+			}
+		}
+	},
+	"osx": {
+		"options": {
+			"env": {
+				"PATH": "${config:terminal.integrated.env.osx.PATH}"
+			}
+		}
+	},
+	"presentation": {
+		"echo": false,
+		"reveal": "always",
+		"focus": true,
+		"panel": "shared",
+		"clear": false,
+		"showReuseMessage": true
+	},
+	"tasks": [
+		{
+			"label": "Build & Run: Release",
+			"command": "chalet buildrun Release",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+		},
+		{
+			"label": "Build: Release",
+			"command": "chalet build Release",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Run: Release",
+			"command": "chalet run Release",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Rebuild: Release",
+			"command": "chalet rebuild Release",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Clean: Release",
+			"command": "chalet clean Release",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Build & Run: Debug",
+			"command": "chalet buildrun Debug",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Build: Debug",
+			"command": "chalet build Debug",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Run: Debug",
+			"command": "chalet run Debug",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Rebuild: Debug",
+			"command": "chalet rebuild Debug",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Clean: Release",
+			"command": "chalet clean Debug",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Run: Tests",
+			"command": "chalet run Release unit-tests",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Bundle",
+			"command": "chalet bundle",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Clean: All",
+			"command": "chalet clean",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		}
+	]
+}

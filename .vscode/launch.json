@@ -1,0 +1,45 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "GDB/LLDB",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/build/Debug/${workspaceRootFolderName}",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"preLaunchTask": "Build: Debug",
+			"externalConsole": false,
+			"internalConsoleOptions": "neverOpen",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"windows": {
+				"program": "${workspaceFolder}/build/Debug/${workspaceRootFolderName}.exe",
+				"MIMode": "gdb",
+				"miDebuggerPath": "C:/mingw32/bin/gdb.exe",
+				"env": {
+					"Path": "${config:terminal.integrated.env.windows.Path}"
+				}
+			},
+			"linux": {
+				"MIMode": "gdb",
+				"miDebuggerPath": "/usr/bin/gdb",
+				"env": {
+					"PATH": "${config:terminal.integrated.env.linux.PATH}",
+				}
+			},
+			"osx": {
+				"MIMode": "lldb",
+				"env": {
+					"PATH": "${config:terminal.integrated.env.osx.PATH}",
+				}
+			},
+		}
+	]
+}
