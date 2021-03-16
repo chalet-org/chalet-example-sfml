@@ -7,7 +7,6 @@
 	"C_Cpp.workspaceParsingPriority": "highest",
 	"C_Cpp.enhancedColorization": "Disabled",
 	"debug.toolBarLocation": "docked",
-	"editor.fontFamily": "'Ubuntu Mono', 'Courier Prime Code', 'Courier', 'Courier New', Consolas, monospace",
 	"editor.tabSize": 4,
 	"editor.insertSpaces": false,
 	"editor.formatOnSave": true,
@@ -37,23 +36,13 @@
 	},
 	"terminal.integrated.shell.windows": "C:/Program Files/Git/bin/bash.exe",
 	"terminal.integrated.env.windows": {
-		"Path": "C:/Users/Rew/dev/chalet-dev/build/Release;C:/mingw32/bin;C:/SFML-2.5.1/bin"
+		"Path": "${env:USERPROFILE}/dev/chalet-dev/build/Release;${env:USERPROFILE}/dev/chalet-dev/build/Debug;C:/mingw32/bin;C:/SFML-2.5.1/bin"
 	},
 	"terminal.integrated.env.linux": {
-		"PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+		"PATH": "${env:HOME}/dev/chalet-dev/build/Release:${env:HOME}/dev/chalet-dev/build/Debug:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 	},
 	"terminal.integrated.env.osx": {
-		"PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-	},
-	"workbench.colorCustomizations": {
-		"statusBar.background": "#8ac242",
-		"statusBar.foreground": "#ffffff",
-		"statusBar.debuggingBackground": "#5e9517",
-		"statusBar.debuggingForeground": "#ffffff",
-		"terminal.ansiBrightRed": "#ee3355",
-		"terminal.ansiBrightYellow": "#ffcc55",
-		"terminal.ansiBrightGreen": "#a5ea4f",
-		"terminal.ansiBrightBlue": "#5599ff"
+		"PATH": "chalet_external/sfml/build/Release/lib:${env:HOME}/dev/chalet-dev/build/Release:${env:HOME}/dev/chalet-dev/build/Debug:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 	},
 	"json.schemas": [
 		{
@@ -64,7 +53,7 @@
 		},
 		{
 			"fileMatch": [
-				"cache.json"
+				"chalet-cache.json"
 			],
 			"url": "../chalet-dev/schema/chalet-cache.schema.json"
 		}

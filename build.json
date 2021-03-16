@@ -2,28 +2,12 @@
 	"version": "0.0.1",
 	"workspace": "VS Code Boilerplate",
 	"environment": {
-		"showCommands": false,
-		"path.windows": [
-			"C:/SFML-2.5.1/bin"
+		"showCommands": true,
+		"externalDepDir": "chalet_external",
+		"path": [
+			"${externalDepDir}/sfml/build/${configuration}/lib"
 		]
 	},
-	/*"configurations": [
-		{
-			"name": "Release",
-			"optimizations": "3",
-			"linkTimeOptimization": true,
-			"stripSymbols": true
-		},
-		{
-			"name": "Debug",
-			"optimizations": "0",
-			"debugSymbols": true
-		}
-	],*/
-	/*"configurations": [
-		"Release",
-		"Debug"
-	],*/
 	"allProjects": {
 		"language": "C++",
 		"compilerSettings:Cxx": {
@@ -37,12 +21,6 @@
 			],
 			"includeDirs": [
 				"vendor"
-			],
-			"libDirs.windows": [
-				"C:/SFML-2.5.1/lib"
-			],
-			"includeDirs.windows": [
-				"C:/SFML-2.5.1/include"
 			],
 			"links:Release": [
 				"sfml-graphics",
@@ -74,21 +52,36 @@
 			]
 		},
 		"dumpAssembly": false,
-		// "maxJobs": 8,
-		// "maxJobs.rpi": 4,
-		// "compileOptions": [],
-		// "linkerOptions": [],
+		"runDependencies.macos": [],
 		"runDependencies.windows": [
 			"openal32.dll"
 		]
 	},
 	"projects": [
 		{
-			"name": "chalet-vscode-boilerplate",
+			"name": "sfml",
+			"kind": "sharedLibrary",
+			"location": "${externalDepDir}/sfml",
+			"compilerSettings:Cxx": {
+				"cmake": {
+					"enabled": true,
+					"recheck": true,
+					"defines": []
+				}
+			}
+		},
+		{
+			"name": "sfml-app",
 			"kind": "desktopApplication",
 			"location": "src",
 			"compilerSettings:Cxx": {
-				"pch": "src/PCH.hpp"
+				"pch": "src/PCH.hpp",
+				"includeDirs": [
+					"${externalDepDir}/sfml/include"
+				],
+				"libDirs": [
+					"${externalDepDir}/sfml/build/${configuration}/lib"
+				]
 			},
 			"runProject": true
 		},
@@ -103,10 +96,18 @@
 				"exclude": "src/Main.cpp"
 			},
 			"compilerSettings:Cxx": {
-				"pch": "src/PCH.hpp"
+				"pch": "src/PCH.hpp",
+				"includeDirs": [
+					"${externalDepDir}/sfml/include"
+				],
+				"libDirs": [
+					"${externalDepDir}/sfml/build/${configuration}/lib"
+				]
 			},
 			"runArguments": [
-				"-w","NoTests","-s"
+				"-w",
+				"NoTests",
+				"-s"
 			],
 			"onlyInConfiguration": [
 				"Release"
@@ -115,17 +116,19 @@
 	],
 	"externalDependencies": [
 		{
-			"repository": "https://github.com/SFML/SFML.git"
+			"repository": "https://github.com/SFML/SFML.git",
+			"tag": "2.5.1"
 		}
 	],
 	"bundle": {
-		"appName": "SFML Boilerplate",
-		"shortDescription": "SFML Boilerplate",
-		"longDescription": "SFML Boilerplate",
+		"appName": "SFML App",
+		"shortDescription": "SFML App",
+		"longDescription": "SFML App",
 		"outDir": "dist",
 		"configuration": "Release",
 		"projects": [
-			"chalet-vscode-boilerplate"
+			"sfml",
+			"sfml-app"
 		],
 		"dependencies": [
 			"content"
@@ -149,8 +152,8 @@
 			".DS_Store"
 		],
 		"macos": {
-			"bundleName": "SFML Boilerplate",
-			"bundleIdentifier": "com.developer.sfmlboilerplate",
+			"bundleName": "SFML App",
+			"bundleIdentifier": "com.developer.sfmlapp",
 			"icon": "env/osx/sfml.png",
 			"infoPropertyList": "env/osx/Info.plist.json",
 			"makeDmg": true,

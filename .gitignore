@@ -2,6 +2,8 @@
 build
 dist
 gmon.out
+chalet_external
+
 *.stats
 Thumbs.db
 .DS_Store
