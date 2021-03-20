@@ -8,6 +8,10 @@
 			"${externalDepDir}/sfml/build/${configuration}/lib"
 		]
 	},
+	"configurations": [
+		"Release",
+		"Debug"
+	],
 	"allProjects": {
 		"language": "C++",
 		"compilerSettings:Cxx": {
@@ -16,20 +20,20 @@
 			"staticLinking": false,
 			"posixThreads": true,
 			"warnings": "strict",
-			"defines:Debug": [
+			"defines:debug": [
 				"_DEBUG"
 			],
 			"includeDirs": [
 				"vendor"
 			],
-			"links:Release": [
+			"links:!debug": [
 				"sfml-graphics",
 				"sfml-audio",
 				"sfml-network",
 				"sfml-window",
 				"sfml-system"
 			],
-			"links:Debug": [
+			"links:debug": [
 				"sfml-graphics-d",
 				"sfml-audio-d",
 				"sfml-network-d",
@@ -116,8 +120,8 @@
 	],
 	"externalDependencies": [
 		{
-			"repository": "https://github.com/SFML/SFML.git",
-			"tag": "2.5.1"
+			"repository": "https://github.com/SFML/SFML.git"
+			// "tag": "2.5.1"
 		}
 	],
 	"bundle": {
