@@ -36,9 +36,16 @@
 			},
 			"osx": {
 				"MIMode": "lldb",
-				"env": {
-					"PATH": "${config:terminal.integrated.env.osx.PATH}",
-				}
+				"environment": [
+					{
+						"name": "PATH",
+						"value": "${config:terminal.integrated.env.osx.PATH}"
+					},
+					{
+						"name": "LD_LIBRARY_PATH",
+						"value": "${workspaceFolder}/chalet_external/sfml/build/Debug/lib:${env:LD_LIBRARY_PATH}"
+					}
+				]
 			},
 		}
 	]
