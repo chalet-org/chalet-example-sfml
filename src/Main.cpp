@@ -11,9 +11,28 @@ int main()
 	sf::RenderWindow window;
 	// in Windows at least, this must be called before creating the window
 	float screenScalingFactor = platform.getScreenScalingFactor(window.getSystemHandle());
+
 	// Use the screenScalingFactor
-	window.create(sf::VideoMode(200.0f * screenScalingFactor, 200.0f * screenScalingFactor), "SFML works!");
+	sf::VideoMode mode = sf::VideoMode(512.0f * screenScalingFactor, 512.0f * screenScalingFactor);
+
+	sf::ContextSettings inSettings;
+#if !defined(SFML_OS_MACOS)
+// inSettings.majorVersion = 4;
+// inSettings.minorVersion = 1;
+// inSettings.depthBits = 24;
+// inSettings.stencilBits = 8;
+// inSettings.attributeFlags = sf::ContextSettings::Attribute::Core;
+#endif
+	window.create(mode, "SFML works!", sf::Style::Default, inSettings);
 	platform.setIcon(window.getSystemHandle());
+
+	sf::ContextSettings settings = window.getSettings();
+	std::cout << "OpenGL context created with version: "
+			  << settings.majorVersion << "." << settings.minorVersion
+			  << " with " << settings.depthBits << " depth bits, "
+			  << settings.stencilBits << " stencil bits, "
+			  << (settings.attributeFlags == sf::ContextSettings::Attribute::Core ? "Core Profile" : "Compatibility Profile")
+			  << std::endl;
 
 	sf::CircleShape shape(window.getSize().x / 2);
 	shape.setFillColor(sf::Color::White);

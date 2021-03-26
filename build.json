@@ -73,7 +73,7 @@
 			"compilerSettings:Cxx": {
 				"cmake": {
 					"enabled": true,
-					"recheck": true,
+					"recheck": false,
 					"defines": []
 				}
 			}
