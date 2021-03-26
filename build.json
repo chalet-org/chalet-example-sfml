@@ -24,7 +24,11 @@
 				"_DEBUG"
 			],
 			"includeDirs": [
+				"${externalDepDir}/sfml/include",
 				"vendor"
+			],
+			"libDirs": [
+				"${externalDepDir}/SFML/build/${configuration}/lib"
 			],
 			"links:!debug": [
 				"sfml-graphics",
@@ -79,13 +83,7 @@
 			"kind": "desktopApplication",
 			"location": "src",
 			"compilerSettings:Cxx": {
-				"pch": "src/PCH.hpp",
-				"includeDirs": [
-					"${externalDepDir}/sfml/include"
-				],
-				"libDirs": [
-					"${externalDepDir}/sfml/build/${configuration}/lib"
-				]
+				"pch": "src/PCH.hpp"
 			},
 			"runProject": true
 		},
@@ -100,13 +98,7 @@
 				"exclude": "src/Main.cpp"
 			},
 			"compilerSettings:Cxx": {
-				"pch": "src/PCH.hpp",
-				"includeDirs": [
-					"${externalDepDir}/sfml/include"
-				],
-				"libDirs": [
-					"${externalDepDir}/sfml/build/${configuration}/lib"
-				]
+				"pch": "src/PCH.hpp"
 			},
 			"runArguments": [
 				"-w",
@@ -120,8 +112,8 @@
 	],
 	"externalDependencies": [
 		{
-			"repository": "https://github.com/SFML/SFML.git"
-			// "tag": "2.5.1"
+			"repository": "https://github.com/SFML/SFML.git",
+			"tag": "2.5.1"
 		}
 	],
 	"bundle": {
