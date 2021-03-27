@@ -2,7 +2,7 @@
 	"version": "0.0.1",
 	"workspace": "VS Code Boilerplate",
 	"environment": {
-		"showCommands": false,
+		"showCommands": true,
 		"externalDepDir": "chalet_external",
 		"path": [
 			"${externalDepDir}/sfml/build/${configuration}/lib"
@@ -53,6 +53,7 @@
 				"gdi32"
 			],
 			"macosFrameworkPaths": [
+				"${externalDepDir}/sfml/build/${configuration}/lib",
 				"/Library/Frameworks"
 			],
 			"macosFrameworks": [
@@ -158,11 +159,11 @@
 				"2x": "env/osx/dmg-background@2x.png"
 			},
 			"dylibs": [
-				"libsfml-graphics.2.5",
-				"libsfml-audio.2.5",
-				"libsfml-network.2.5",
-				"libsfml-window.2.5",
-				"libsfml-system.2.5"
+				"libsfml-audio.2.5.dylib",
+				"libsfml-graphics.2.5.dylib",
+				"libsfml-network.2.5.dylib",
+				"libsfml-system.2.5.dylib",
+				"libsfml-window.2.5.dylib"
 			]
 		},
 		"linux": {
