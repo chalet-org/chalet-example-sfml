@@ -1,13 +1,13 @@
 {
-	"CFBundleName": "${PRODUCTION_MACOS_BUNDLE_NAME}",
-	"CFBundleDisplayName": "${PRODUCTION_MACOS_BUNDLE_DISPLAY_NAME}",
-	"CFBundleIdentifier": "com.${PRODUCTION_MACOS_BUNDLE_DEVELOPER}.${PRODUCTION_MACOS_BUNDLE_NAME}",
-	"CFBundleVersion": "0.0.1.1",
+	"CFBundleName": "${bundleName}",
+	"CFBundleDisplayName": "${appName}",
+	"CFBundleIdentifier": "${bundleIdentifier}",
+	"CFBundleVersion": "${version}",
 	"CFBundleDevelopmentRegion": "en",
 	"CFBundleInfoDictionaryVersion": "6.0",
 	"CFBundlePackageType": "APPL",
 	"CFBundleSignature": "????",
-	"CFBundleExecutable": "${NAME}",
-	"CFBundleIconFile": "${MACOS_ICON}",
+	"CFBundleExecutable": "${mainProject}",
+	"CFBundleIconFile": "${icon}",
 	"NSHighResolutionCapable": true
 }

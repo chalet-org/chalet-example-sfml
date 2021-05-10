@@ -1,11 +1,11 @@
 {
 	"version": "0.0.1",
-	"workspace": "VS Code Boilerplate",
+	"workspace": "Chalet Example - SFML",
 	"environment": {
 		"showCommands": false,
 		"externalDepDir": "chalet_external",
 		"path": [
-			"${externalDepDir}/sfml/build/${configuration}/lib"
+			"${externalDepDir}/SFML/build/${configuration}/lib"
 		]
 	},
 	"configurations": [
@@ -24,7 +24,7 @@
 				"_DEBUG"
 			],
 			"includeDirs": [
-				"${externalDepDir}/sfml/include",
+				"${externalDepDir}/SFML/include",
 				"vendor"
 			],
 			"libDirs": [
@@ -53,7 +53,7 @@
 				"gdi32"
 			],
 			"macosFrameworkPaths": [
-				"${externalDepDir}/sfml/build/${configuration}/lib",
+				"${externalDepDir}/SFML/build/${configuration}/lib",
 				"/Library/Frameworks"
 			],
 			"macosFrameworks": [
@@ -69,7 +69,7 @@
 	"projects": {
 		"sfml": {
 			"kind": "sharedLibrary",
-			"location": "${externalDepDir}/sfml",
+			"location": "${externalDepDir}/SFML",
 			"compilerSettings:Cxx": {
 				"cmake": {
 					"enabled": true,
@@ -111,7 +111,7 @@
 	"externalDependencies": {
 		"SFML": {
 			"repository": "https://github.com/SFML/SFML.git",
-			"tag": "2.5.1"
+			"commit": "2b79ae96d9649d26be9a3deea0862ac1ad29c19b"
 		}
 	},
 	"bundle": {
@@ -148,7 +148,7 @@
 		"macos": {
 			"bundleName": "SFML App",
 			"bundleIdentifier": "com.developer.sfmlapp",
-			"icon": "env/osx/sfml.png",
+			"icon": "env/sfml-logo.png",
 			"infoPropertyList": "env/osx/Info.plist.json",
 			"makeDmg": true,
 			"dmgBackground": {
@@ -164,7 +164,7 @@
 			]
 		},
 		"linux": {
-			"icon": "env/linux/app.png",
+			"icon": "env/sfml-logo.png",
 			"desktopEntry": "env/linux/app.desktop"
 		},
 		"windows": {
