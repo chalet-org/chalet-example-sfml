@@ -5,7 +5,7 @@
 		"showCommands": false,
 		"externalDepDir": "chalet_external",
 		"path": [
-			"${externalDepDir}/SFML/build/${configuration}/lib"
+			"build/${configuration}/${externalDepDir}/sfml/lib"
 		]
 	},
 	"configurations": [
@@ -13,6 +13,7 @@
 		"Debug"
 	],
 	"templates:all": {
+		"dumpAssembly": false,
 		"language": "C++",
 		"compilerSettings:Cxx": {
 			"cppStandard": "c++17",
@@ -28,7 +29,7 @@
 				"vendor"
 			],
 			"libDirs": [
-				"${externalDepDir}/SFML/build/${configuration}/lib"
+				"build/${configuration}/${externalDepDir}/sfml/lib"
 			],
 			"links:!debug": [
 				"sfml-graphics",
@@ -53,14 +54,13 @@
 				"gdi32"
 			],
 			"macosFrameworkPaths": [
-				"${externalDepDir}/SFML/build/${configuration}/lib",
+				"build/${configuration}/${externalDepDir}/sfml/lib",
 				"/Library/Frameworks"
 			],
 			"macosFrameworks": [
 				"CoreFoundation"
 			]
 		},
-		"dumpAssembly": false,
 		"runDependencies.macos": [],
 		"runDependencies.windows": [
 			"openal32.dll"
@@ -68,15 +68,10 @@
 	},
 	"projects": {
 		"sfml": {
-			"kind": "sharedLibrary",
+			"cmake": true,
 			"location": "${externalDepDir}/SFML",
-			"compilerSettings:Cxx": {
-				"cmake": {
-					"enabled": true,
-					"recheck": false,
-					"defines": []
-				}
-			}
+			"recheck": true,
+			"defines": []
 		},
 		"sfml-app": {
 			"kind": "desktopApplication",
