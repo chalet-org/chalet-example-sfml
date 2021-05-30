@@ -22,28 +22,19 @@
 			"windows": {
 				"program": "${workspaceFolder}/build/Debug/sfml-app.exe",
 				"MIMode": "gdb",
-				"miDebuggerPath": "C:/mingw32/bin/gdb.exe",
-				"env": {
-					"Path": "${config:terminal.integrated.env.windows.Path}"
-				}
+				"miDebuggerPath": "C:/mingw32/bin/gdb.exe"
 			},
 			"linux": {
 				"MIMode": "gdb",
-				"miDebuggerPath": "/usr/bin/gdb",
-				"env": {
-					"PATH": "${config:terminal.integrated.env.linux.PATH}",
-				}
+				"miDebuggerPath": "/usr/bin/gdb"
 			},
 			"osx": {
+				"program": "${workspaceFolder}/build/x86_64-apple-darwin20.3.0_Debug/sfml-app",
 				"MIMode": "lldb",
 				"environment": [
 					{
-						"name": "PATH",
-						"value": "${config:terminal.integrated.env.osx.PATH}"
-					},
-					{
 						"name": "LD_LIBRARY_PATH",
-						"value": "${workspaceFolder}/chalet_external/sfml/build/Debug/lib:${env:LD_LIBRARY_PATH}"
+						"value": "${workspaceFolder}/build/x86_64-apple-darwin20.3.0_Debug/chalet_external/sfml/lib:${env:LD_LIBRARY_PATH}"
 					}
 				]
 			},

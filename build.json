@@ -1,25 +1,20 @@
 {
 	"version": "0.0.1",
 	"workspace": "Chalet Example - SFML",
-	"environment": {
-		"showCommands": false,
-		"externalDepDir": "chalet_external",
-		"path": [
-			"build/${configuration}/${externalDepDir}/sfml/lib"
-		]
-	},
+	"externalDepDir": "chalet_external",
+	"path": [
+		"build/${configuration}/${externalDepDir}/sfml/lib"
+	],
 	"configurations": [
 		"Release",
 		"Debug"
 	],
-	"templates:all": {
-		"dumpAssembly": false,
+	"abstracts:all": {
 		"language": "C++",
-		"compilerSettings:Cxx": {
+		"settings:Cxx": {
 			"cppStandard": "c++17",
 			"rtti": false,
 			"staticLinking": false,
-			"posixThreads": true,
 			"warnings": "strict",
 			"defines:debug": [
 				"_DEBUG"
@@ -66,7 +61,7 @@
 			"openal32.dll"
 		]
 	},
-	"projects": {
+	"targets": {
 		"sfml": {
 			"cmake": true,
 			"location": "${externalDepDir}/SFML",
@@ -76,7 +71,7 @@
 		"sfml-app": {
 			"kind": "desktopApplication",
 			"location": "src",
-			"compilerSettings:Cxx": {
+			"settings:Cxx": {
 				"pch": "src/PCH.hpp"
 			},
 			"runProject": true
@@ -90,7 +85,7 @@
 				],
 				"exclude": "src/Main.cpp"
 			},
-			"compilerSettings:Cxx": {
+			"settings:Cxx": {
 				"pch": "src/PCH.hpp"
 			},
 			"runArguments": [

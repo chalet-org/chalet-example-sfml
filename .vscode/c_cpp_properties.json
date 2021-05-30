@@ -8,7 +8,7 @@
 				"${workspaceFolder}/test",
 				"${workspaceFolder}/vendor",
 				"${workspaceFolder}/chalet_external/sfml/include",
-				"/usr/local/include/**",
+				"/usr/local/include/",
 				"/usr/include/**"
 			],
 			"defines": [
@@ -33,7 +33,7 @@
 				"${workspaceFolder}/test",
 				"${workspaceFolder}/vendor",
 				"${workspaceFolder}/chalet_external/sfml/include",
-				"/usr/local/include/**"
+				"/usr/local/include/"
 			],
 			"defines": [
 				"_DEBUG"
@@ -46,8 +46,8 @@
 		},
 		{
 			"name": "Win32",
-			"intelliSenseMode": "gcc-x86",
-			"compilerPath": "C:/mingw32/bin/gcc.exe",
+			"intelliSenseMode": "gcc-x64",
+			"compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
 			"includePath": [
 				"${workspaceFolder}/src",
 				"${workspaceFolder}/test",

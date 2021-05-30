@@ -1,11 +1,4 @@
 {
-	"C_Cpp.autocomplete": "Default",
-	"C_Cpp.intelliSenseEngine": "Default",
-	"C_Cpp.dimInactiveRegions": false,
-	"C_Cpp.preferredPathSeparator": "Forward Slash",
-	"C_Cpp.loggingLevel": "Warning",
-	"C_Cpp.workspaceParsingPriority": "highest",
-	"C_Cpp.enhancedColorization": "Disabled",
 	"debug.toolBarLocation": "docked",
 	"editor.tabSize": 4,
 	"editor.insertSpaces": false,
@@ -13,46 +6,9 @@
 	"files.encoding": "utf8",
 	"files.trimTrailingWhitespace": true,
 	"files.eol": "\n",
-	"files.exclude": {
-		"env/windows/*.sh": true,
-		"env/osx/dmg.applescript": true,
-		"gmon.out": true,
-		// "build/": true,
-		// "dist/": true,
-		"**/*.7z": true,
-		"**/*.rar": true,
-		"**/Thumbs.db": true
-	},
 	"files.associations": {
 		"*.json": "jsonc",
-		"*.stats": "cpp",
 		"*.desktop": "properties",
 		".clang-format": "yaml"
-	},
-	"terminal.integrated.env.windows": {
-		"Path": "${env:USERPROFILE}/dev/chalet-dev/build/Release;${env:USERPROFILE}/dev/chalet-dev/build/Debug;C:/msys64/mingw64/bin"
-	},
-	"terminal.integrated.env.linux": {
-		"PATH": "${env:HOME}/dev/chalet-dev/build/Release:${env:HOME}/dev/chalet-dev/build/Debug:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-	},
-	"terminal.integrated.env.osx": {
-		"PATH": "chalet_external/sfml/build/Release/lib:${env:HOME}/dev/chalet-dev/build/Release:${env:HOME}/dev/chalet-dev/build/Debug:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-	},
-	"json.schemas": [
-		{
-			"fileMatch": [
-				"build.json"
-			],
-			"url": "../chalet-dev/schema/chalet.schema.json"
-		},
-		{
-			"fileMatch": [
-				"chalet-cache.json"
-			],
-			"url": "../chalet-dev/schema/chalet-cache.schema.json"
-		}
-	],
-	"[applescript]": {
-		"files.encoding": "utf8"
 	}
 }
