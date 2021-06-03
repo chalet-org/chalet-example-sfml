@@ -104,62 +104,55 @@
 			"commit": "2b79ae96d9649d26be9a3deea0862ac1ad29c19b"
 		}
 	},
-	"bundle": {
-		"appName": "SFML App",
-		"shortDescription": "SFML App",
-		"longDescription": "SFML App",
-		"outDir": "dist",
-		"configuration": "Release",
-		"projects": [
-			"sfml",
-			"sfml-app"
-		],
-		"dependencies": [
-			"content"
-		],
-		"dependencies.windows": [
-			"libgcc_s_dw2-1.dll",
-			"libstdc++-6.dll",
-			"libwinpthread-1.dll",
-			"openal32.dll",
-			"sfml-audio-2.dll",
-			"sfml-graphics-2.dll",
-			"sfml-network-2.dll",
-			"sfml-system-2.dll",
-			"sfml-window-2.dll"
-		],
-		"exclude": [
-			"*.psd",
-			"*.rar",
-			"*.7z",
-			"Thumbs.db",
-			".DS_Store"
-		],
-		"macos": {
-			"bundleName": "SFML App",
-			"bundleIdentifier": "com.developer.sfmlapp",
-			"icon": "env/sfml-logo.png",
-			"infoPropertyList": "env/osx/Info.plist.json",
-			"makeDmg": true,
-			"dmgBackground": {
-				"1x": "env/osx/dmg-background.png",
-				"2x": "env/osx/dmg-background@2x.png"
+	"distribution": {
+		"SFML App": {
+			"description": "SFML App",
+			"outDir": "dist",
+			"configuration": "Release",
+			"projects": [
+				"sfml",
+				"sfml-app"
+			],
+			"dependencies": [
+				"content"
+			],
+			"dependencies.windows": [
+				"libgcc_s_dw2-1.dll",
+				"libstdc++-6.dll",
+				"libwinpthread-1.dll",
+				"openal32.dll",
+				"sfml-audio-2.dll",
+				"sfml-graphics-2.dll",
+				"sfml-network-2.dll",
+				"sfml-system-2.dll",
+				"sfml-window-2.dll"
+			],
+			"exclude": [
+				"*.psd",
+				"*.rar",
+				"*.7z",
+				"Thumbs.db",
+				".DS_Store"
+			],
+			"macos": {
+				"bundleName": "SFML App",
+				"icon": "platform/sfml-logo.png",
+				"infoPropertyList": "platform/osx/Info.plist.json",
+				"makeDmg": true,
+				"dmgBackground": {
+					"1x": "platform/osx/dmg-background.png",
+					"2x": "platform/osx/dmg-background@2x.png"
+				},
+				"dylibs": []
 			},
-			"dylibs": [
-				"libsfml-audio.2.5.dylib",
-				"libsfml-graphics.2.5.dylib",
-				"libsfml-network.2.5.dylib",
-				"libsfml-system.2.5.dylib",
-				"libsfml-window.2.5.dylib"
-			]
-		},
-		"linux": {
-			"icon": "env/sfml-logo.png",
-			"desktopEntry": "env/linux/app.desktop"
-		},
-		"windows": {
-			"icon": "env/windows/app.ico",
-			"manifest": "env/windows/app.manifest"
+			"linux": {
+				"icon": "platform/sfml-logo.png",
+				"desktopEntry": "platform/linux/app.desktop"
+			},
+			"windows": {
+				"icon": "platform/windows/app.ico",
+				"manifest": "platform/windows/app.manifest"
+			}
 		}
 	}
 }
