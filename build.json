@@ -3,7 +3,7 @@
 	"workspace": "Chalet Example - SFML",
 	"externalDepDir": "chalet_external",
 	"path": [
-		"build/${configuration}/${externalDepDir}/SFML/lib",
+		"${buildDir}/${externalDepDir}/SFML/lib",
 		"${externalDepDir}/SFML/extlibs/bin/x64"
 	],
 	"configurations": [
@@ -25,7 +25,7 @@
 				"vendor"
 			],
 			"libDirs": [
-				"build/${configuration}/${externalDepDir}/sfml/lib"
+				"${buildDir}/${externalDepDir}/SFML/lib"
 			],
 			"links:!debug": [
 				"sfml-graphics",
@@ -49,10 +49,7 @@
 				"stdc++fs",
 				"gdi32"
 			],
-			"macosFrameworkPaths": [
-				"build/${configuration}/${externalDepDir}/sfml/lib",
-				"/Library/Frameworks"
-			],
+			"macosFrameworkPaths": [],
 			"macosFrameworks": [
 				"CoreFoundation"
 			]
