@@ -3,6 +3,8 @@
 
 #include "Platform/IPlatform.hpp"
 
+#include <array>
+
 // TODO: WM_DISPLAYCHANGE event handling (multi-monitor support)
 
 namespace util

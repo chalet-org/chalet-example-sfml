@@ -1,13 +1,14 @@
 #include <catch2/catch.hpp>
 
 // This example is a bit silly, but you get the idea
-TEST_CASE("sf::RenderWindow", "[renderwindow]") {
+TEST_CASE("sf::RenderWindow", "[renderwindow]")
+{
 	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
 
 	REQUIRE(window.getSize().x == 200);
 	REQUIRE(window.getSize().y == 200);
 
-	sf::CircleShape shape(window.getSize().x/2);
+	sf::CircleShape shape(static_cast<float>(window.getSize().x / 2));
 	shape.setFillColor(sf::Color::White);
 
 	REQUIRE(shape.getRadius() == 100.0f);
@@ -29,5 +30,4 @@ TEST_CASE("sf::RenderWindow", "[renderwindow]") {
 	window.display();
 
 	REQUIRE(window.isOpen() == true);
-
 }

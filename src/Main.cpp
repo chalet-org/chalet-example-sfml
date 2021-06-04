@@ -13,7 +13,10 @@ int main()
 	float screenScalingFactor = platform.getScreenScalingFactor(window.getSystemHandle());
 
 	// Use the screenScalingFactor
-	sf::VideoMode mode = sf::VideoMode(512.0f * screenScalingFactor, 512.0f * screenScalingFactor);
+	sf::VideoMode mode {
+		static_cast<uint>(512.0f * screenScalingFactor),
+		static_cast<uint>(512.0f * screenScalingFactor),
+	};
 
 	sf::ContextSettings inSettings;
 #if !defined(SFML_OS_MACOS)
@@ -34,7 +37,7 @@ int main()
 			  << (settings.attributeFlags == sf::ContextSettings::Attribute::Core ? "Core Profile" : "Compatibility Profile")
 			  << std::endl;
 
-	sf::CircleShape shape(window.getSize().x / 2);
+	sf::CircleShape shape(static_cast<float>(window.getSize().x / 2));
 	shape.setFillColor(sf::Color::White);
 
 	sf::Texture shapeTexture;
@@ -42,6 +45,9 @@ int main()
 	shape.setTexture(&shapeTexture);
 
 	sf::Event event;
+
+	window.clear();
+	window.display();
 
 	while (window.isOpen())
 	{

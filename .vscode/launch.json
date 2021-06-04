@@ -2,6 +2,18 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "MSVC",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/build/x86_64-pc-windows-msvc_Debug/sfml-app.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"envFile": "${workspaceFolder}/.env.windows",
+			"preLaunchTask": "Build: Debug"
+		},
+		{
 			"name": "GDB/LLDB",
 			"type": "cppdbg",
 			"request": "launch",

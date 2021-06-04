@@ -3,7 +3,8 @@
 	"workspace": "Chalet Example - SFML",
 	"externalDepDir": "chalet_external",
 	"path": [
-		"build/${configuration}/${externalDepDir}/sfml/lib"
+		"build/${configuration}/${externalDepDir}/SFML/lib",
+		"${externalDepDir}/SFML/extlibs/bin/x64"
 	],
 	"configurations": [
 		"Release",
@@ -115,17 +116,6 @@
 			],
 			"dependencies": [
 				"content"
-			],
-			"dependencies.windows": [
-				"libgcc_s_dw2-1.dll",
-				"libstdc++-6.dll",
-				"libwinpthread-1.dll",
-				"openal32.dll",
-				"sfml-audio-2.dll",
-				"sfml-graphics-2.dll",
-				"sfml-network-2.dll",
-				"sfml-system-2.dll",
-				"sfml-window-2.dll"
 			],
 			"exclude": [
 				"*.psd",
