@@ -3,12 +3,15 @@
 	"workspace": "Chalet Example - SFML",
 	"externalDepDir": "chalet_external",
 	"path": [
-		"${buildDir}/${externalDepDir}/SFML/lib",
+		"${buildDir}/${externalDepDir}/SFML/lib"
+	],
+	"path.windows": [
 		"${externalDepDir}/SFML/extlibs/bin/x64"
 	],
 	"configurations": [
 		"Release",
-		"Debug"
+		"Debug",
+		"Profile"
 	],
 	"abstracts:all": {
 		"language": "C++",
