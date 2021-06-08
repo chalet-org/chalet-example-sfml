@@ -3,7 +3,6 @@
 
 #include <winuser.h>
 
-#define WIN32_ICON_MAIN 1
-#define MANIFEST_RESOURCE_ID 1
+#define WIN32_ICON_MAIN 2
 
 #endif // RESOURCE_H
