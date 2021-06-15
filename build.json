@@ -25,7 +25,7 @@
 			],
 			"includeDirs": [
 				"${externalDepDir}/SFML/include",
-				"vendor"
+				"${externalDepDir}/catch2/single_include"
 			],
 			"libDirs": [
 				"${buildDir}/${externalDepDir}/SFML/lib"
@@ -66,7 +66,7 @@
 		"sfml": {
 			"type": "CMake",
 			"location": "${externalDepDir}/SFML",
-			"recheck": true,
+			"recheck": false,
 			"defines": []
 		},
 		"sfml-app": {
@@ -107,6 +107,10 @@
 		"SFML": {
 			"repository": "https://github.com/SFML/SFML.git",
 			"commit": "2b79ae96d9649d26be9a3deea0862ac1ad29c19b"
+		},
+		"catch2": {
+			"repository": "https://github.com/catchorg/Catch2.git",
+			"branch": "v2.x"
 		}
 	},
 	"distribution": {
@@ -133,6 +137,7 @@
 				"icon": "platform/sfml-logo.png",
 				"infoPropertyList": "platform/osx/Info.plist.json",
 				"makeDmg": true,
+				"universalBinary": true,
 				"dmgBackground": {
 					"1x": "platform/osx/dmg-background.png",
 					"2x": "platform/osx/dmg-background@2x.png"
