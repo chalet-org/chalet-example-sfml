@@ -52,12 +52,10 @@
 				"stdc++fs",
 				"gdi32"
 			],
-			"macosFrameworkPaths": [],
 			"macosFrameworks": [
 				"CoreFoundation"
 			]
 		},
-		"runDependencies.macos": [],
 		"runDependencies.windows": [
 			"openal32.dll"
 		]
@@ -66,8 +64,7 @@
 		"sfml": {
 			"type": "CMake",
 			"location": "${externalDepDir}/SFML",
-			"recheck": false,
-			"defines": []
+			"recheck": false
 		},
 		"sfml-app": {
 			"kind": "desktopApplication",
