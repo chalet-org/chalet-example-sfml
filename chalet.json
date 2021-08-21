@@ -8,6 +8,10 @@
 	"path.windows": [
 		"${externalDepDir}/SFML/extlibs/bin/x64"
 	],
+	"path.macos": [
+		"/usr/local/opt/libogg/lib",
+		"/usr/local/opt/libvorbis/lib"
+	],
 	"configurations": [
 		"Release",
 		"Debug",
@@ -53,7 +57,19 @@
 				"gdi32"
 			],
 			"macosFrameworks": [
-				"CoreFoundation"
+				"CoreFoundation",
+				"FLAC",
+				"freetype",
+				"ogg",
+				"openal",
+				"vorbis",
+				"vorbisenc",
+				"vorbisfile"
+			],
+			"macosFrameworkPaths": [
+				"${externalDepDir}/sfml/extlibs/libs-osx/Frameworks",
+				"/Library/Frameworks",
+				"/System/Library/Frameworks"
 			]
 		},
 		"runDependencies.windows": [
@@ -119,8 +135,12 @@
 				"sfml",
 				"sfml-app"
 			],
-			"dependencies": [
+			"include": [
 				"content"
+			],
+			"include.macos": [
+				"libogg.0.dylib",
+				"libvorbis.0.dylib"
 			],
 			"exclude": [
 				"*.psd",
@@ -132,12 +152,12 @@
 			"macos": {
 				"bundleName": "SFML App",
 				"icon": "platform/sfml-logo.png",
-				"infoPropertyList": "platform/osx/Info.plist.json",
-				"makeDmg": true,
-				"universalBinary": true,
-				"dmgBackground": {
-					"1x": "platform/osx/dmg-background.png",
-					"2x": "platform/osx/dmg-background@2x.png"
+				"infoPropertyList": "platform/macos/Info.plist.json",
+				"dmg": {
+					"background": {
+						"1x": "platform/macos/dmg-background.png"
+						// "2x": "platform/macos/dmg-background@2x.png"
+					}
 				}
 			},
 			"linux": {

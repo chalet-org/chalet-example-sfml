@@ -13,7 +13,7 @@ int main()
 	float screenScalingFactor = platform.getScreenScalingFactor(window.getSystemHandle());
 
 	// Use the screenScalingFactor
-#if defined(SFML_OS_MACOS)
+#if defined(SFML_SYSTEM_MACOS)
 	float baseSize = 512.0f;
 #else
 	float baseSize = 256.0f;
@@ -24,7 +24,7 @@ int main()
 	};
 
 	sf::ContextSettings inSettings;
-#if !defined(SFML_OS_MACOS)
+#if !defined(SFML_SYSTEM_MACOS)
 // inSettings.majorVersion = 4;
 // inSettings.minorVersion = 1;
 // inSettings.depthBits = 24;
