@@ -62,7 +62,9 @@
 			],
 			"macosFrameworkPaths": [
 				"${externalDir}/sfml/extlibs/libs-osx/Frameworks"
-			]
+			],
+			"windowsApplicationIcon": "platform/windows/app.ico",
+			"windowsApplicationManifest": "platform/windows/app.manifest"
 		},
 		"runDependencies.windows": [
 			"openal32.dll"
@@ -78,9 +80,7 @@
 			"kind": "desktopApplication",
 			"location": "src",
 			"settings:Cxx": {
-				"pch": "src/PCH.hpp",
-				"windowsApplicationIcon": "platform/windows/app.ico",
-				"windowsApplicationManifest": "platform/windows/app.manifest"
+				"pch": "src/PCH.hpp"
 			},
 			"runProject": true
 		},
@@ -94,9 +94,7 @@
 				"exclude": "src/Main.cpp"
 			},
 			"settings:Cxx": {
-				"pch": "src/PCH.hpp",
-				"windowsApplicationIcon": "platform/windows/app.ico",
-				"windowsApplicationManifest": "platform/windows/app.manifest"
+				"pch": "src/PCH.hpp"
 			},
 			"runArguments": [
 				"-w",
