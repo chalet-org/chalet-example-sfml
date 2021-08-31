@@ -1,21 +1,15 @@
 {
 	"version": "0.0.1",
 	"workspace": "Chalet Example - SFML",
-	"externalDepDir": "chalet_external",
-	"path": [
-		"${buildDir}/${externalDepDir}/SFML/lib"
+	"searchPaths": [
+		"${buildDir}/${externalDir}/SFML/lib"
 	],
-	"path.windows": [
-		"${externalDepDir}/SFML/extlibs/bin/x64"
+	"searchPaths.windows": [
+		"${externalDir}/SFML/extlibs/bin/x64"
 	],
-	"path.macos": [
+	"searchPaths.macos": [
 		"/usr/local/opt/libogg/lib",
 		"/usr/local/opt/libvorbis/lib"
-	],
-	"configurations": [
-		"Release",
-		"Debug",
-		"Profile"
 	],
 	"abstracts:all": {
 		"language": "C++",
@@ -28,11 +22,11 @@
 				"_DEBUG"
 			],
 			"includeDirs": [
-				"${externalDepDir}/SFML/include",
-				"${externalDepDir}/catch2/single_include"
+				"${externalDir}/SFML/include",
+				"${externalDir}/catch2/single_include"
 			],
 			"libDirs": [
-				"${buildDir}/${externalDepDir}/SFML/lib"
+				"${buildDir}/${externalDir}/SFML/lib"
 			],
 			"links:!debug": [
 				"sfml-graphics",
@@ -67,9 +61,7 @@
 				"vorbisfile"
 			],
 			"macosFrameworkPaths": [
-				"${externalDepDir}/sfml/extlibs/libs-osx/Frameworks",
-				"/Library/Frameworks",
-				"/System/Library/Frameworks"
+				"${externalDir}/sfml/extlibs/libs-osx/Frameworks"
 			]
 		},
 		"runDependencies.windows": [
@@ -79,8 +71,8 @@
 	"targets": {
 		"sfml": {
 			"type": "CMake",
-			"location": "${externalDepDir}/SFML",
-			"recheck": false
+			"location": "${externalDir}/SFML",
+			"recheck": true
 		},
 		"sfml-app": {
 			"kind": "desktopApplication",
