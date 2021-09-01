@@ -119,7 +119,6 @@
 	"distribution": {
 		"SFML App": {
 			"description": "SFML App",
-			"subDirectory": "dist",
 			"configuration": "Release",
 			"projects": [
 				"sfml",
