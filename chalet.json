@@ -74,7 +74,7 @@
 		"sfml": {
 			"type": "CMake",
 			"location": "${externalDir}/SFML",
-			"recheck": true
+			"recheck": false
 		},
 		"sfml-app": {
 			"kind": "desktopApplication",
