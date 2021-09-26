@@ -18,7 +18,7 @@
 			"rtti": false,
 			"staticLinking": false,
 			"warnings": "strict",
-			"defines:debug": [
+			"defines.debug": [
 				"_DEBUG"
 			],
 			"includeDirs": [
@@ -28,14 +28,14 @@
 			"libDirs": [
 				"${buildDir}/${externalDir}/SFML/lib"
 			],
-			"links:!debug": [
+			"links.!debug": [
 				"sfml-graphics",
 				"sfml-audio",
 				"sfml-network",
 				"sfml-window",
 				"sfml-system"
 			],
-			"links:debug": [
+			"links.debug": [
 				"sfml-graphics-d",
 				"sfml-audio-d",
 				"sfml-network-d",
@@ -81,7 +81,7 @@
 			"location": "src",
 			"settings:Cxx": {
 				"pch": "src/PCH.hpp",
-				"windowsSubSystem:!debug": "windows"
+				"windowsSubSystem.!debug": "windows"
 			},
 			"runProject": true
 		},
@@ -102,9 +102,7 @@
 				"NoTests",
 				"-s"
 			],
-			"onlyInConfiguration": [
-				"Release"
-			]
+			"condition": "!debug"
 		}
 	},
 	"externalDependencies": {
