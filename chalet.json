@@ -2,7 +2,7 @@
 	"version": "0.0.1",
 	"workspace": "Chalet Example - SFML",
 	"searchPaths": [
-		"${buildDir}/${externalDir}/SFML/lib"
+		"${externalBuildDir}/SFML/lib"
 	],
 	"searchPaths.windows": [
 		"${externalDir}/SFML/extlibs/bin/x64"
@@ -26,7 +26,7 @@
 				"${externalDir}/catch2/single_include"
 			],
 			"libDirs": [
-				"${buildDir}/${externalDir}/SFML/lib"
+				"${externalBuildDir}/SFML/lib"
 			],
 			"links.!debug": [
 				"sfml-graphics",
@@ -61,7 +61,7 @@
 				"vorbisfile"
 			],
 			"macosFrameworkPaths": [
-				"${externalDir}/sfml/extlibs/libs-osx/Frameworks"
+				"${externalDir}/SFML/extlibs/libs-osx/Frameworks"
 			],
 			"windowsApplicationIcon": "platform/windows/app.ico",
 			"windowsApplicationManifest": "platform/windows/app.manifest"
