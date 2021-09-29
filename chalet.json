@@ -65,14 +65,11 @@
 			],
 			"windowsApplicationIcon": "platform/windows/app.ico",
 			"windowsApplicationManifest": "platform/windows/app.manifest"
-		},
-		"runDependencies.windows": [
-			"openal32.dll"
-		]
+		}
 	},
 	"targets": {
 		"sfml": {
-			"type": "CMake",
+			"kind": "cmakeProject",
 			"location": "${externalDir}/SFML",
 			"recheck": false
 		},
@@ -83,9 +80,13 @@
 				"pch": "src/PCH.hpp",
 				"windowsSubSystem.!debug": "windows"
 			},
-			"runProject": true
+			"runProject": true,
+			"runDependencies.windows": [
+				"openal32.dll"
+			]
 		},
 		"unit-tests": {
+			"condition": "!debug",
 			"kind": "executable",
 			"location": {
 				"include": [
@@ -102,7 +103,9 @@
 				"NoTests",
 				"-s"
 			],
-			"condition": "!debug"
+			"runDependencies.windows": [
+				"openal32.dll"
+			]
 		}
 	},
 	"externalDependencies": {

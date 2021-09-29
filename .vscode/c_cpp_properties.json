@@ -6,7 +6,6 @@
 			"includePath": [
 				"${workspaceFolder}/src",
 				"${workspaceFolder}/test",
-				"${workspaceFolder}/vendor",
 				"${workspaceFolder}/chalet_external/sfml/include",
 				"/usr/local/include/",
 				"/usr/include/**"
@@ -31,7 +30,6 @@
 			"includePath": [
 				"${workspaceFolder}/src",
 				"${workspaceFolder}/test",
-				"${workspaceFolder}/vendor",
 				"${workspaceFolder}/chalet_external/sfml/include",
 				"/usr/local/include/"
 			],
@@ -51,7 +49,6 @@
 			"includePath": [
 				"${workspaceFolder}/src",
 				"${workspaceFolder}/test",
-				"${workspaceFolder}/vendor",
 				"${workspaceFolder}/chalet_external/sfml/include"
 			],
 			"defines": [
