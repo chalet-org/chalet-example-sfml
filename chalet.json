@@ -80,7 +80,7 @@
 				"pch": "src/PCH.hpp",
 				"windowsSubSystem.!debug": "windows"
 			},
-			"runProject": true,
+			"runTarget": true,
 			"runDependencies.windows": [
 				"openal32.dll"
 			]
