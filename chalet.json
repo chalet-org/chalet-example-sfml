@@ -120,9 +120,10 @@
 	},
 	"distribution": {
 		"SFML App": {
+			"kind": "bundle",
 			"description": "SFML App",
 			"configuration": "Release",
-			"projects": [
+			"buildTargets": [
 				"sfml",
 				"sfml-app"
 			],
