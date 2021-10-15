@@ -142,7 +142,7 @@
 				".DS_Store"
 			],
 			"macos": {
-				"bundleName": "SFML App",
+				"bundleType": "app",
 				"icon": "platform/sfml-logo.png",
 				"infoPropertyList": "platform/macos/Info.plist.json",
 				"dmg": {
