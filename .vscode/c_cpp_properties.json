@@ -2,11 +2,10 @@
 	"configurations": [
 		{
 			"name": "Linux",
-			"intelliSenseMode": "gcc-x64",
 			"includePath": [
 				"${workspaceFolder}/src",
 				"${workspaceFolder}/test",
-				"${workspaceFolder}/chalet_external/sfml/include",
+				"${workspaceFolder}/chalet_external/SFML/include",
 				"/usr/local/include/",
 				"/usr/include/**"
 			],
