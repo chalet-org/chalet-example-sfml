@@ -11,7 +11,7 @@
 		"/usr/local/opt/libogg/lib",
 		"/usr/local/opt/libvorbis/lib"
 	],
-	"abstracts:all": {
+	"abstracts:*": {
 		"language": "C++",
 		"settings:Cxx": {
 			"cppStandard": "c++17",
