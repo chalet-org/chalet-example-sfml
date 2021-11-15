@@ -35,6 +35,8 @@ MacOSPlatform::MacOSPlatform()
 void MacOSPlatform::setIcon(const sf::WindowHandle& inHandle)
 {
 	UNUSED(inHandle);
+
+	// Not applicable on MacOS
 }
 
 /******************************************************************************
@@ -46,6 +48,8 @@ void MacOSPlatform::toggleFullscreen(const sf::WindowHandle& inHandle, const sf:
 	UNUSED(inStyle);
 	UNUSED(inWindowed);
 	UNUSED(inResolution);
+
+	// Not applicable on MacOS
 }
 
 /******************************************************************************
@@ -75,10 +79,16 @@ float MacOSPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
 /******************************************************************************
  *
  *****************************************************************************/
-int MacOSPlatform::getRefreshRate(const sf::WindowHandle& inHandle)
+float MacOSPlatform::getRefreshRate(const sf::WindowHandle& inHandle)
 {
 	UNUSED(inHandle);
-	return 59;
+
+	CGDirectDisplayID mainDisplayId = CGMainDisplayID();
+	CGDisplayModeRef displayMode = CGDisplayCopyDisplayMode(mainDisplayId);
+	double refresh = CGDisplayModeGetRefreshRate(displayMode);
+	CGDisplayModeRelease(displayMode);
+
+	return static_cast<float>(refresh);
 }
 }
 

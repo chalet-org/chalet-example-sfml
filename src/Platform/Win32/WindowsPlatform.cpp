@@ -12,7 +12,6 @@ WindowsPlatform::WindowsPlatform()
 {
 	// Get the default device info
 	m_screenScalingFactor = getScreenScalingFactor(nullptr);
-	m_refreshRate = getRefreshRate(nullptr);
 }
 
 /******************************************************************************
@@ -112,18 +111,15 @@ float WindowsPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
 /******************************************************************************
  * Gets the refresh rate of the device from the supplied handle
  *****************************************************************************/
-int WindowsPlatform::getRefreshRate(const sf::WindowHandle& inHandle)
+float WindowsPlatform::getRefreshRate(const sf::WindowHandle& inHandle)
 {
 	UNUSED(inHandle);
 
-	if (m_refreshRate != 0)
-		return m_refreshRate;
-
 	HDC screenDC = GetDC(nullptr);
-	m_refreshRate = GetDeviceCaps(screenDC, VREFRESH);
+	int refresh = GetDeviceCaps(screenDC, VREFRESH);
 	ReleaseDC(nullptr, screenDC);
 
-	return m_refreshRate;
+	return static_cast<float>(refresh);
 }
 
 /******************************************************************************

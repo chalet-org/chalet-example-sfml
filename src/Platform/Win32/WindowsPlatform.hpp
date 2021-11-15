@@ -16,7 +16,7 @@ struct WindowsPlatform : IPlatform
 	void setIcon(const sf::WindowHandle& inHandle) final;
 	void toggleFullscreen(const sf::WindowHandle& inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u& inResolution) final;
 	float getScreenScalingFactor(const sf::WindowHandle& inHandle) final;
-	int getRefreshRate(const sf::WindowHandle& inHandle) final;
+	float getRefreshRate(const sf::WindowHandle& inHandle) final;
 
 private:
 	PBYTE getIconDirectory(const int inResourceId);
@@ -24,7 +24,6 @@ private:
 	DWORD sfmlWindowStyleToWin32WindowStyle(const sf::Uint32 inStyle);
 
 	float m_screenScalingFactor = 0.0f;
-	int m_refreshRate = 0;
 };
 }
 

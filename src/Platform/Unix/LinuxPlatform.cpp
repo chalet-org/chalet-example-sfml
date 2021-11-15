@@ -45,10 +45,10 @@ float LinuxPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
 /******************************************************************************
  *
  *****************************************************************************/
-int LinuxPlatform::getRefreshRate(const sf::WindowHandle& inHandle)
+float LinuxPlatform::getRefreshRate(const sf::WindowHandle& inHandle)
 {
 	UNUSED(inHandle);
-	return 59;
+	return 59.0f;
 }
 }
 
