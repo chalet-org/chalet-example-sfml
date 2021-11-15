@@ -1,15 +1,5 @@
 #include "Platform/Platform.hpp"
 
-void printContextSettingsFromWindow(const sf::ContextSettings& inSettings)
-{
-	std::cout << "OpenGL context created with version: "
-			  << inSettings.majorVersion << "." << inSettings.minorVersion
-			  << " with " << inSettings.depthBits << " depth bits, "
-			  << inSettings.stencilBits << " stencil bits, "
-			  << (inSettings.attributeFlags == sf::ContextSettings::Attribute::Core ? "Core Profile" : "Compatibility Profile")
-			  << std::endl;
-}
-
 int main()
 {
 	util::Platform platform;
@@ -36,10 +26,16 @@ int main()
 // settings.attributeFlags = sf::ContextSettings::Attribute::Core;
 #endif
 	window.create(mode, "SFML works!", sf::Style::Default, settings);
-	window.setFramerateLimit(60);
 	platform.setIcon(window.getSystemHandle());
 
-	printContextSettingsFromWindow(window.getSettings());
+	[](const sf::ContextSettings& inSettings) {
+		std::cout << "OpenGL context created with version: "
+				  << inSettings.majorVersion << "." << inSettings.minorVersion
+				  << " with " << inSettings.depthBits << " depth bits, "
+				  << inSettings.stencilBits << " stencil bits, "
+				  << (inSettings.attributeFlags == sf::ContextSettings::Attribute::Core ? "Core Profile" : "Compatibility Profile")
+				  << std::endl;
+	}(window.getSettings());
 
 	sf::CircleShape shape(static_cast<float>(window.getSize().x / 2));
 	shape.setFillColor(sf::Color::White);
@@ -52,6 +48,7 @@ int main()
 
 	sf::Event event;
 
+	window.setFramerateLimit(30);
 	window.clear();
 	window.display();
 

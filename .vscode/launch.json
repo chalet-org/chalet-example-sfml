@@ -41,21 +41,21 @@
 			"preLaunchTask": "Build: Debug",
 			"externalConsole": false,
 			"internalConsoleOptions": "neverOpen",
-			"setupCommands": [
-				{
-					"description": "Enable pretty-printing for gdb",
-					"text": "-enable-pretty-printing",
-					"ignoreFailures": true
-				}
-			],
 			"windows": {
 				"program": "${workspaceFolder}/build/Debug/sfml-app.exe",
 				"MIMode": "gdb",
 				"miDebuggerPath": "C:/mingw32/bin/gdb.exe"
 			},
 			"linux": {
+				"program": "${workspaceRoot}/build/x86_64-pc-linux-gnu_Debug/sfml-app",
 				"MIMode": "gdb",
-				"miDebuggerPath": "/usr/bin/gdb"
+				"miDebuggerPath": "/usr/bin/gdb",
+				"environment": [
+					{
+						"name": "LD_LIBRARY_PATH",
+						"value": "${workspaceFolder}/build/x86_64-pc-linux-gnu_Debug/chalet_external/SFML/lib:$LD_LIBRARY_PATH"
+					}
+				]
 			}
 		}
 	]
