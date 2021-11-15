@@ -1,5 +1,15 @@
 #include "Platform/Platform.hpp"
 
+void printContextSettingsFromWindow(const sf::ContextSettings& inSettings)
+{
+	std::cout << "OpenGL context created with version: "
+			  << inSettings.majorVersion << "." << inSettings.minorVersion
+			  << " with " << inSettings.depthBits << " depth bits, "
+			  << inSettings.stencilBits << " stencil bits, "
+			  << (inSettings.attributeFlags == sf::ContextSettings::Attribute::Core ? "Core Profile" : "Compatibility Profile")
+			  << std::endl;
+}
+
 int main()
 {
 	util::Platform platform;
@@ -10,38 +20,34 @@ int main()
 
 	sf::RenderWindow window;
 	// in Windows at least, this must be called before creating the window
-	float screenScalingFactor = platform.getScreenScalingFactor(window.getSystemHandle());
+	float screenScale = platform.getScreenScalingFactor(window.getSystemHandle());
 
 	sf::VideoMode mode {
-		static_cast<uint>(256.0f * screenScalingFactor),
-		static_cast<uint>(256.0f * screenScalingFactor),
+		static_cast<uint>(256.0f * screenScale),
+		static_cast<uint>(256.0f * screenScale),
 	};
 
-	sf::ContextSettings inSettings;
+	sf::ContextSettings settings;
 #if !defined(SFML_SYSTEM_MACOS)
-// inSettings.majorVersion = 4;
-// inSettings.minorVersion = 1;
-// inSettings.depthBits = 24;
-// inSettings.stencilBits = 8;
-// inSettings.attributeFlags = sf::ContextSettings::Attribute::Core;
+// settings.majorVersion = 4;
+// settings.minorVersion = 1;
+// settings.depthBits = 24;
+// settings.stencilBits = 8;
+// settings.attributeFlags = sf::ContextSettings::Attribute::Core;
 #endif
-	window.create(mode, "SFML works!", sf::Style::Default, inSettings);
+	window.create(mode, "SFML works!", sf::Style::Default, settings);
 	platform.setIcon(window.getSystemHandle());
 
-	sf::ContextSettings settings = window.getSettings();
-	std::cout << "OpenGL context created with version: "
-			  << settings.majorVersion << "." << settings.minorVersion
-			  << " with " << settings.depthBits << " depth bits, "
-			  << settings.stencilBits << " stencil bits, "
-			  << (settings.attributeFlags == sf::ContextSettings::Attribute::Core ? "Core Profile" : "Compatibility Profile")
-			  << std::endl;
+	printContextSettingsFromWindow(window.getSettings());
 
 	sf::CircleShape shape(static_cast<float>(window.getSize().x / 2));
 	shape.setFillColor(sf::Color::White);
 
-	sf::Texture shapeTexture;
-	shapeTexture.loadFromFile("content/sfml.png");
-	shape.setTexture(&shapeTexture);
+	auto shapeTexture = std::make_unique<sf::Texture>();
+	if (!shapeTexture->loadFromFile("content/sfml.png"))
+		return 1;
+
+	shape.setTexture(shapeTexture.get());
 
 	sf::Event event;
 

@@ -14,6 +14,23 @@
 			"preLaunchTask": "Build: Debug"
 		},
 		{
+			"name": "LLDB",
+			"type": "lldb",
+			"request": "launch",
+			"program": "${workspaceFolder}/build/Debug/sfml-app",
+			"args": [],
+			"stopOnEntry": false,
+			"cwd": "${workspaceFolder}",
+			"preLaunchTask": "Build: Debug",
+			"osx": {
+				"program": "${workspaceFolder}/build/x86_64-apple-darwin_Debug/sfml-app",
+				"env": {
+					"DYLD_FALLBACK_LIBRARY_PATH": "${workspaceFolder}/build/x86_64-apple-darwin_Debug/chalet_external/SFML/lib",
+					"DYLD_FALLBACK_FRAMEWORK_PATH": ":${workspaceFolder}/chalet_external/SFML/extlibs/libs-osx/Frameworks"
+				}
+			}
+		},
+		{
 			"name": "GDB/LLDB",
 			"type": "cppdbg",
 			"request": "launch",
@@ -39,17 +56,7 @@
 			"linux": {
 				"MIMode": "gdb",
 				"miDebuggerPath": "/usr/bin/gdb"
-			},
-			"osx": {
-				"program": "${workspaceFolder}/build/x86_64-apple-darwin_Debug/sfml-app",
-				"MIMode": "lldb",
-				"environment": [
-					{
-						"name": "LD_LIBRARY_PATH",
-						"value": "${workspaceFolder}/build/x86_64-apple-darwin_Debug/chalet_external/sfml/lib:${env:LD_LIBRARY_PATH}"
-					}
-				]
-			},
+			}
 		}
 	]
 }
