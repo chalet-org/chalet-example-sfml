@@ -1,6 +1,8 @@
 #ifdef __APPLE__
 	#include "Platform/MacOS/MacOSPlatform.hpp"
 
+	#include <array>
+
 	#include <CoreFoundation/CoreFoundation.h>
 	#include <CoreGraphics/CGDisplayConfiguration.h>
 
@@ -14,8 +16,8 @@ MacOSPlatform::MacOSPlatform()
 	// This function ensures the working directory is set inside of the bundle if in production mode
 	CFBundleRef mainBundle = CFBundleGetMainBundle();
 	CFURLRef resourcesURL = CFBundleCopyResourcesDirectoryURL(mainBundle);
-	char path[PATH_MAX];
-	bool pathSet = CFURLGetFileSystemRepresentation(resourcesURL, TRUE, (UInt8*)path, PATH_MAX);
+	std::array<char, PATH_MAX> path;
+	bool pathSet = CFURLGetFileSystemRepresentation(resourcesURL, TRUE, (UInt8*)path.data(), path.size());
 
 	// This is a copy, so we release it here
 	CFRelease(resourcesURL);
@@ -23,9 +25,9 @@ MacOSPlatform::MacOSPlatform()
 	// Actually do the check here
 	if (pathSet)
 	{
-		std::string pathStr = path;
+		std::string pathStr = path.data();
 		if (pathStr.find(".app") != std::string::npos)
-			chdir(path);
+			chdir(path.data());
 	}
 }
 

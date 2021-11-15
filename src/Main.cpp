@@ -36,6 +36,7 @@ int main()
 // settings.attributeFlags = sf::ContextSettings::Attribute::Core;
 #endif
 	window.create(mode, "SFML works!", sf::Style::Default, settings);
+	window.setFramerateLimit(60);
 	platform.setIcon(window.getSystemHandle());
 
 	printContextSettingsFromWindow(window.getSettings());
@@ -45,7 +46,7 @@ int main()
 
 	auto shapeTexture = std::make_unique<sf::Texture>();
 	if (!shapeTexture->loadFromFile("content/sfml.png"))
-		return 1;
+		return EXIT_FAILURE;
 
 	shape.setTexture(shapeTexture.get());
 
@@ -67,5 +68,5 @@ int main()
 		window.display();
 	}
 
-	return 0;
+	return EXIT_SUCCESS;
 }

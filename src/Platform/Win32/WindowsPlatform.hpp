@@ -9,14 +9,14 @@
 
 namespace util
 {
-struct WindowsPlatform : IPlatform
+struct WindowsPlatform final : IPlatform
 {
 	WindowsPlatform();
 
-	void setIcon(const sf::WindowHandle& inHandle) final;
-	void toggleFullscreen(const sf::WindowHandle& inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u& inResolution) final;
-	float getScreenScalingFactor(const sf::WindowHandle& inHandle) final;
-	float getRefreshRate(const sf::WindowHandle& inHandle) final;
+	virtual void setIcon(const sf::WindowHandle& inHandle) final;
+	virtual void toggleFullscreen(const sf::WindowHandle& inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u& inResolution) final;
+	virtual float getScreenScalingFactor(const sf::WindowHandle& inHandle) final;
+	virtual float getRefreshRate(const sf::WindowHandle& inHandle) final;
 
 private:
 	PBYTE getIconDirectory(const int inResourceId);

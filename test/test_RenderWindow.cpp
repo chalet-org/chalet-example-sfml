@@ -8,7 +8,7 @@ TEST_CASE("sf::RenderWindow", "[renderwindow]")
 	REQUIRE(window.getSize().x == 200);
 	REQUIRE(window.getSize().y == 200);
 
-	sf::CircleShape shape(static_cast<float>(window.getSize().x / 2));
+	sf::CircleShape shape(static_cast<float>(window.getSize().x * 0.5f));
 	shape.setFillColor(sf::Color::White);
 
 	REQUIRE(shape.getRadius() == 100.0f);

@@ -82,7 +82,7 @@
 				"openal32.dll"
 			]
 		},
-		"unit-tests": {
+		"tests": {
 			"condition": "!debug",
 			"kind": "executable",
 			"location": {
