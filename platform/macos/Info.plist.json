@@ -5,7 +5,7 @@
 	"CFBundleIconFile": "${icon}",
 	"CFBundleIdentifier": "com.developer.application",
 	"CFBundleInfoDictionaryVersion": "6.0",
-	"CFBundleName": "${displayName}",
+	"CFBundleName": "${bundleName}",
 	"CFBundlePackageType": "APPL",
 	"CFBundleShortVersionString": "${version}",
 	"CFBundleVersion": "${version}",

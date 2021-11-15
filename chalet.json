@@ -7,10 +7,6 @@
 	"searchPaths.windows": [
 		"${externalDir}/SFML/extlibs/bin/x64"
 	],
-	"searchPaths.macos": [
-		"/usr/local/opt/libogg/lib",
-		"/usr/local/opt/libvorbis/lib"
-	],
 	"abstracts:*": {
 		"language": "C++",
 		"settings:Cxx": {
@@ -52,6 +48,7 @@
 			],
 			"macosFrameworks": [
 				"CoreFoundation",
+				"CoreGraphics",
 				"FLAC",
 				"freetype",
 				"ogg",
@@ -111,7 +108,7 @@
 	"externalDependencies": {
 		"SFML": {
 			"repository": "https://github.com/SFML/SFML.git",
-			"commit": "2b79ae96d9649d26be9a3deea0862ac1ad29c19b"
+			"commit": "600d0f3baf3c1592d2f2c10e4d53daa940bcb0f4"
 		},
 		"catch2": {
 			"repository": "https://github.com/catchorg/Catch2.git",
@@ -119,7 +116,7 @@
 		}
 	},
 	"distribution": {
-		"SFML App": {
+		"SFMLTest": {
 			"kind": "bundle",
 			"description": "SFML App",
 			"configuration": "Release",
@@ -129,10 +126,6 @@
 			],
 			"include": [
 				"content"
-			],
-			"include.macos": [
-				"libogg.0.dylib",
-				"libvorbis.0.dylib"
 			],
 			"exclude": [
 				"*.psd",

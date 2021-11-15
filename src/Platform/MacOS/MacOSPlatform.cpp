@@ -2,6 +2,7 @@
 	#include "Platform/MacOS/MacOSPlatform.hpp"
 
 	#include <CoreFoundation/CoreFoundation.h>
+	#include <CoreGraphics/CGDisplayConfiguration.h>
 
 namespace util
 {
@@ -53,7 +54,22 @@ void MacOSPlatform::toggleFullscreen(const sf::WindowHandle& inHandle, const sf:
 float MacOSPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
 {
 	UNUSED(inHandle);
-	return 1.0f;
+
+	CGDirectDisplayID mainDisplayId = CGMainDisplayID();
+	size_t width = CGDisplayPixelsWide(mainDisplayId);
+	size_t height = CGDisplayPixelsHigh(mainDisplayId);
+
+	CGDisplayModeRef displayMode = CGDisplayCopyDisplayMode(mainDisplayId);
+	size_t pwidth = CGDisplayModeGetPixelWidth(displayMode);
+	size_t pheight = CGDisplayModeGetPixelHeight(displayMode);
+	CGDisplayModeRelease(displayMode);
+
+	float factorX = static_cast<float>(pwidth) / static_cast<float>(width);
+	float factorY = static_cast<float>(pheight) / static_cast<float>(height);
+
+	float factor = (factorX + factorY) * 0.5f;
+
+	return factor;
 }
 
 /******************************************************************************

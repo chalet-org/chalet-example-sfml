@@ -12,15 +12,9 @@ int main()
 	// in Windows at least, this must be called before creating the window
 	float screenScalingFactor = platform.getScreenScalingFactor(window.getSystemHandle());
 
-	// Use the screenScalingFactor
-#if defined(SFML_SYSTEM_MACOS)
-	float baseSize = 512.0f;
-#else
-	float baseSize = 256.0f;
-#endif
 	sf::VideoMode mode {
-		static_cast<uint>(baseSize * screenScalingFactor),
-		static_cast<uint>(baseSize * screenScalingFactor),
+		static_cast<uint>(256.0f * screenScalingFactor),
+		static_cast<uint>(256.0f * screenScalingFactor),
 	};
 
 	sf::ContextSettings inSettings;
