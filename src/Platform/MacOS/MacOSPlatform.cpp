@@ -61,6 +61,7 @@ float MacOSPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
 {
 	UNUSED(inHandle);
 
+	#if 0
 	CGDirectDisplayID mainDisplayId = CGMainDisplayID();
 	size_t width = CGDisplayPixelsWide(mainDisplayId);
 	size_t height = CGDisplayPixelsHigh(mainDisplayId);
@@ -74,8 +75,9 @@ float MacOSPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
 	float factorY = static_cast<float>(pheight) / static_cast<float>(height);
 
 	float factor = (factorX + factorY) * 0.5f;
+	#endif
 
-	return factor;
+	return 1.0f;
 }
 
 /******************************************************************************
