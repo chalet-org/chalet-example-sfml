@@ -13,8 +13,5 @@
 	},
 	"files.exclude": {
 		"chalet_external": true
-	},
-	"terminal.integrated.env.windows": {
-		"Path": "${workspaceFolder}/build/x86_64-w64-mingw32_Debug/chalet_external/SFML/lib;%Path%"
 	}
 }
