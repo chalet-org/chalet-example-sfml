@@ -46,6 +46,26 @@
 		},
 		{
 			"name": "Win32",
+			"intelliSenseMode": "msvc-x64",
+			"cStandard": "c11",
+			"cppStandard": "c++17",
+			"includePath": [
+				"${workspaceFolder}/src",
+				"${workspaceFolder}/test",
+				"${workspaceFolder}/chalet_external/sfml/include",
+				"${workspaceFolder}/chalet_external/catch2/single_include"
+			],
+			"defines": [
+				"_DEBUG",
+				"UNICODE",
+				"_UNICODE"
+			],
+			"forcedInclude": [
+				"${workspaceFolder}/src/PCH.hpp"
+			]
+		},
+		{
+			"name": "Win32 (MinGW)",
 			"intelliSenseMode": "gcc-x64",
 			"compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
 			"cStandard": "c11",
