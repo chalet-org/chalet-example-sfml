@@ -105,7 +105,7 @@
 	"externalDependencies": {
 		"SFML": {
 			"repository": "https://github.com/SFML/SFML.git",
-			"commit": "600d0f3baf3c1592d2f2c10e4d53daa940bcb0f4"
+			"commit": "ef8fee53567af3e47026f6485164d4f95a2be5da"
 		},
 		"catch2": {
 			"repository": "https://github.com/catchorg/Catch2.git",
