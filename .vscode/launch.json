@@ -5,13 +5,18 @@
 			"name": "MSVC",
 			"type": "cppvsdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/build/x86_64-pc-windows-msvc_Debug/sfml-app.exe",
+			"program": "${workspaceFolder}/build/x64-pc-windows-msvc17_Debug/sfml-app.exe",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
-			"envFile": "${workspaceFolder}/.env.windows",
-			"preLaunchTask": "Build: Debug"
+			"preLaunchTask": "Build: Debug",
+			"environment": [
+				{
+					"name": "Path",
+					"value": "${workspaceFolder}/build/x64-pc-windows-msvc17_Debug/chalet_external/SFML/lib;%Path%"
+				}
+			],
 		},
 		{
 			"name": "LLDB",
@@ -26,12 +31,12 @@
 				"program": "${workspaceFolder}/build/x86_64-apple-darwin_Debug/sfml-app",
 				"env": {
 					"DYLD_FALLBACK_LIBRARY_PATH": "${workspaceFolder}/build/x86_64-apple-darwin_Debug/chalet_external/SFML/lib",
-					"DYLD_FALLBACK_FRAMEWORK_PATH": ":${workspaceFolder}/chalet_external/SFML/extlibs/libs-osx/Frameworks"
+					"DYLD_FALLBACK_FRAMEWORK_PATH": "${workspaceFolder}/chalet_external/SFML/extlibs/libs-osx/Frameworks"
 				}
 			}
 		},
 		{
-			"name": "GDB/LLDB",
+			"name": "GDB",
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/build/Debug/sfml-app",
@@ -39,17 +44,17 @@
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"preLaunchTask": "Build: Debug",
-			"externalConsole": false,
-			"internalConsoleOptions": "neverOpen",
 			"windows": {
-				"program": "${workspaceFolder}/build/Debug/sfml-app.exe",
+				"program": "${workspaceFolder}/build/x86_64-w64-mingw32_Debug/sfml-app.exe",
 				"MIMode": "gdb",
-				"miDebuggerPath": "C:/mingw32/bin/gdb.exe"
+				"miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe"
 			},
 			"linux": {
 				"program": "${workspaceRoot}/build/x86_64-pc-linux-gnu_Debug/sfml-app",
 				"MIMode": "gdb",
 				"miDebuggerPath": "/usr/bin/gdb",
+				"externalConsole": false,
+				"internalConsoleOptions": "neverOpen",
 				"environment": [
 					{
 						"name": "LD_LIBRARY_PATH",
