@@ -131,15 +131,11 @@
 				"Thumbs.db",
 				".DS_Store"
 			],
-			"macos": {
-				"bundleType": "app",
-				"icon": "platform/sfml-logo.png",
-				"infoPropertyList": "platform/macos/Info.plist.json"
-			},
-			"linux": {
-				"icon": "platform/sfml-logo.png",
-				"desktopEntry": "platform/linux/app.desktop"
-			}
+			"macosBundleType": "app",
+			"macosBundleIcon": "platform/sfml-logo.png",
+			"macosBundleInfoPropertyList": "platform/macos/Info.plist.json",
+			"linuxDesktopEntryIcon": "platform/sfml-logo.png",
+			"linuxDesktopEntry": "platform/linux/app.desktop"
 		},
 		"SFMLApp.dmg": {
 			"kind": "macosDiskImage",
