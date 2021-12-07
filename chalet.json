@@ -144,6 +144,7 @@
 		"SFMLApp.dmg": {
 			"kind": "macosDiskImage",
 			"pathbarVisible": false,
+			"textSize": 12,
 			"iconSize": 80,
 			"background": {
 				"1x": "platform/macos/dmg-background.png",
