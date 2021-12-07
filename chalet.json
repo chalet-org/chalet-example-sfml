@@ -113,7 +113,7 @@
 		}
 	},
 	"distribution": {
-		"SFMLTest": {
+		"SFMLApp": {
 			"kind": "bundle",
 			"description": "SFML App",
 			"configuration": "Release",
@@ -134,17 +134,33 @@
 			"macos": {
 				"bundleType": "app",
 				"icon": "platform/sfml-logo.png",
-				"infoPropertyList": "platform/macos/Info.plist.json",
-				"dmg": {
-					"background": {
-						"1x": "platform/macos/dmg-background.png",
-						"2x": "platform/macos/dmg-background@2x.png"
-					}
-				}
+				"infoPropertyList": "platform/macos/Info.plist.json"
 			},
 			"linux": {
 				"icon": "platform/sfml-logo.png",
 				"desktopEntry": "platform/linux/app.desktop"
+			}
+		},
+		"SFMLApp.dmg": {
+			"kind": "macosDiskImage",
+			"iconSize": 80,
+			"background": {
+				"1x": "platform/macos/dmg-background.png",
+				"2x": "platform/macos/dmg-background@2x.png"
+			},
+			"size": {
+				"width": 512,
+				"height": 342
+			},
+			"positions": {
+				"SFMLApp": {
+					"x": 120,
+					"y": 188
+				},
+				"Applications": {
+					"x": 392,
+					"y": 188
+				}
 			}
 		}
 	}
