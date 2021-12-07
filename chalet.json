@@ -143,6 +143,7 @@
 		},
 		"SFMLApp.dmg": {
 			"kind": "macosDiskImage",
+			"pathbarVisible": false,
 			"iconSize": 80,
 			"background": {
 				"1x": "platform/macos/dmg-background.png",
