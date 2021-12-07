@@ -132,10 +132,10 @@
 				".DS_Store"
 			],
 			"macosBundleType": "app",
-			"macosBundleIcon": "platform/sfml-logo.png",
 			"macosBundleInfoPropertyList": "platform/macos/Info.plist.json",
-			"linuxDesktopEntryIcon": "platform/sfml-logo.png",
-			"linuxDesktopEntry": "platform/linux/app.desktop"
+			"macosBundleIcon": "platform/sfml-logo.png",
+			"linuxDesktopEntry": "platform/linux/app.desktop",
+			"linuxDesktopEntryIcon": "platform/sfml-logo.png"
 		},
 		"SFMLApp.dmg": {
 			"kind": "macosDiskImage",
