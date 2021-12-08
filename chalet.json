@@ -115,7 +115,6 @@
 	"distribution": {
 		"SFMLApp": {
 			"kind": "bundle",
-			"description": "SFML App",
 			"configuration": "Release",
 			"buildTargets": [
 				"sfml",
@@ -131,11 +130,15 @@
 				"Thumbs.db",
 				".DS_Store"
 			],
-			"macosBundleType": "app",
-			"macosBundleInfoPropertyList": "platform/macos/Info.plist.json",
-			"macosBundleIcon": "platform/sfml-logo.png",
-			"linuxDesktopEntry": "platform/linux/app.desktop",
-			"linuxDesktopEntryIcon": "platform/sfml-logo.png"
+			"macosBundle": {
+				"type": "app",
+				"infoPropertyList": "platform/macos/Info.plist.json",
+				"icon": "platform/sfml-logo.png"
+			},
+			"linuxDesktopEntry": {
+				"template": "platform/linux/app.desktop",
+				"icon": "platform/sfml-logo.png"
+			}
 		},
 		"SFMLApp.dmg": {
 			"kind": "macosDiskImage",
