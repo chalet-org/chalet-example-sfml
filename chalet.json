@@ -65,7 +65,8 @@
 		"sfml": {
 			"kind": "cmakeProject",
 			"location": "${externalDir}/SFML",
-			"recheck": false
+			"recheck": false,
+			"rebuild": false
 		},
 		"sfml-app": {
 			"kind": "executable",
