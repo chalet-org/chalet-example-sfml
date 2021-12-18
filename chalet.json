@@ -10,6 +10,7 @@
 			"cppStandard": "c++17",
 			"rtti": false,
 			"staticLinking": false,
+			"cppFilesystem": true,
 			"warnings": "strict",
 			"defines.debug": [
 				"_DEBUG"
@@ -36,11 +37,9 @@
 				"sfml-system-d"
 			],
 			"links.linux": [
-				"stdc++fs",
 				"X11"
 			],
 			"links.windows": [
-				"stdc++fs",
 				"gdi32"
 			],
 			"macosFrameworks": [
