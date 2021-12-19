@@ -7,7 +7,7 @@
 	"abstracts:*": {
 		"language": "C++",
 		"settings:Cxx": {
-			"cppStandard": "c++17",
+			"cppStandard": "c++20",
 			"rtti": false,
 			"staticLinking": false,
 			"cppFilesystem": true,
