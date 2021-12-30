@@ -16,6 +16,7 @@
 				"_DEBUG"
 			],
 			"includeDirs": [
+				"src",
 				"${externalDir}/SFML/include",
 				"${externalDir}/catch2/single_include"
 			],
@@ -69,7 +70,7 @@
 		},
 		"sfml-app": {
 			"kind": "executable",
-			"location": "src",
+			"files": "src/**.cpp",
 			"settings:Cxx": {
 				"pch": "src/PCH.hpp",
 				"windowsSubSystem.!debug": "windows"
@@ -82,15 +83,15 @@
 		"tests": {
 			"condition": "!debug",
 			"kind": "executable",
-			"location": {
-				"include": [
-					"test",
-					"src"
-				],
-				"exclude": "src/Main.cpp"
-			},
+			"files": [
+				"test/**.cpp",
+				"src/*/**.cpp"
+			],
 			"settings:Cxx": {
-				"pch": "src/PCH.hpp"
+				"pch": "src/PCH.hpp",
+				"includeDirs": [
+					"test"
+				]
 			},
 			"runArguments": [
 				"-w",
