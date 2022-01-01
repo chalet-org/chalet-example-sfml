@@ -12,6 +12,7 @@
 			"staticLinking": false,
 			"cppFilesystem": true,
 			"warnings": "strict",
+			"treatWarningsAsErrors": true,
 			"defines.debug": [
 				"_DEBUG"
 			],
