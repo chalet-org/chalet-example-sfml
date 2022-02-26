@@ -76,8 +76,7 @@
 				"pch": "src/PCH.hpp",
 				"windowsSubSystem.!debug": "windows"
 			},
-			"runTarget": true,
-			"runDependencies.windows": [
+			"copyFilesOnRun.windows": [
 				"openal32.dll"
 			]
 		},
@@ -94,12 +93,12 @@
 					"test"
 				]
 			},
-			"runArguments": [
+			"defaultRunArguments": [
 				"-w",
 				"NoTests",
 				"-s"
 			],
-			"runDependencies.windows": [
+			"copyFilesOnRun.windows": [
 				"openal32.dll"
 			]
 		}
