@@ -10,8 +10,5 @@
 		"*.json": "jsonc",
 		"*.desktop": "properties",
 		".clang-format": "yaml"
-	},
-	"files.exclude": {
-		"chalet_external": true
 	}
 }
