@@ -8,8 +8,8 @@
 		"language": "C++",
 		"settings:Cxx": {
 			"cppStandard": "c++20",
-			"rtti": false,
-			"staticLinking": false,
+			"runtimeTypeInformation": false,
+			"staticRuntimeLibrary": false,
 			"cppFilesystem": true,
 			"warnings": "strict",
 			"treatWarningsAsErrors": true,
@@ -73,7 +73,7 @@
 			"kind": "executable",
 			"files": "src/**.cpp",
 			"settings:Cxx": {
-				"pch": "src/PCH.hpp",
+				"precompiledHeader": "src/PCH.hpp",
 				"windowsSubSystem.!debug": "windows"
 			},
 			"copyFilesOnRun.windows": [
@@ -88,7 +88,7 @@
 				"src/*/**.cpp"
 			],
 			"settings:Cxx": {
-				"pch": "src/PCH.hpp",
+				"precompiledHeader": "src/PCH.hpp",
 				"includeDirs": [
 					"test"
 				]
