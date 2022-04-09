@@ -1,6 +1,6 @@
 {
 	"version": "0.0.1",
-	"workspace": "Chalet Example - SFML",
+	"name": "Chalet Example - SFML",
 	"searchPaths.windows": [
 		"${externalDir}/SFML/extlibs/bin/x64"
 	],
