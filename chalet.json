@@ -4,7 +4,7 @@
 	"searchPaths.windows": [
 		"${externalDir}/SFML/extlibs/bin/x64"
 	],
-	"abstracts:*": {
+	"abstracts:sfml": {
 		"language": "C++",
 		"settings:Cxx": {
 			"cppStandard": "c++20",
@@ -18,8 +18,7 @@
 			],
 			"includeDirs": [
 				"src",
-				"${externalDir}/SFML/include",
-				"${externalDir}/catch2/single_include"
+				"${externalDir}/SFML/include"
 			],
 			"libDirs": [
 				"${externalBuildDir}/SFML/lib"
@@ -71,6 +70,7 @@
 		},
 		"sfml-app": {
 			"kind": "executable",
+			"extends": "sfml",
 			"files": "src/**.cpp",
 			"settings:Cxx": {
 				"precompiledHeader": "src/PCH.hpp",
@@ -83,6 +83,7 @@
 		"tests": {
 			"condition": "!debug",
 			"kind": "executable",
+			"extends": "sfml",
 			"files": [
 				"test/**.cpp",
 				"src/*/**.cpp"
@@ -91,6 +92,7 @@
 				"buildSuffix": "sfml-app",
 				"precompiledHeader": "src/PCH.hpp",
 				"includeDirs": [
+					"${externalDir}/catch2/single_include",
 					"test"
 				]
 			},
