@@ -119,7 +119,6 @@
 	"distribution": {
 		"SFMLApp": {
 			"kind": "bundle",
-			"configuration": "Release",
 			"buildTargets": [
 				"sfml",
 				"sfml-app"
