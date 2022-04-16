@@ -1,7 +1,7 @@
 {
 	"version": "0.0.1",
 	"name": "Chalet Example - SFML",
-	"searchPaths.windows": [
+	"searchPaths[:windows]": [
 		"${externalDir}/SFML/extlibs/bin/x64"
 	],
 	"abstracts:sfml": {
@@ -13,7 +13,7 @@
 			"cppFilesystem": true,
 			"warnings": "strict",
 			"treatWarningsAsErrors": true,
-			"defines.debug": [
+			"defines[:debug]": [
 				"_DEBUG"
 			],
 			"includeDirs": [
@@ -23,24 +23,24 @@
 			"libDirs": [
 				"${externalBuildDir}/SFML/lib"
 			],
-			"links.!debug": [
+			"links[:!debug]": [
 				"sfml-graphics",
 				"sfml-audio",
 				"sfml-network",
 				"sfml-window",
 				"sfml-system"
 			],
-			"links.debug": [
+			"links[:debug]": [
 				"sfml-graphics-d",
 				"sfml-audio-d",
 				"sfml-network-d",
 				"sfml-window-d",
 				"sfml-system-d"
 			],
-			"links.linux": [
+			"links[:linux]": [
 				"X11"
 			],
-			"links.windows": [
+			"links[:windows]": [
 				"gdi32"
 			],
 			"macosFrameworks": [
@@ -74,14 +74,14 @@
 			"files": "src/**.cpp",
 			"settings:Cxx": {
 				"precompiledHeader": "src/PCH.hpp",
-				"windowsSubSystem.!debug": "windows"
+				"windowsSubSystem[:!debug]": "windows"
 			},
-			"copyFilesOnRun.windows": [
+			"copyFilesOnRun[:windows]": [
 				"openal32.dll"
 			]
 		},
 		"tests": {
-			"condition": "!debug",
+			"condition": "[:!debug]",
 			"kind": "executable",
 			"extends": "sfml",
 			"files": [
@@ -101,7 +101,7 @@
 				"NoTests",
 				"-s"
 			],
-			"copyFilesOnRun.windows": [
+			"copyFilesOnRun[:windows]": [
 				"openal32.dll"
 			]
 		}
