@@ -1,15 +1,17 @@
 {
 	"version": "0.0.1",
 	"name": "Chalet Example - SFML",
-	"searchPaths[:windows]": [
-		"${externalDir}/SFML/extlibs/bin/x64"
+	"searchPaths[toolchain:msvc+architecture:x86_64]": [
+		"${externalDir}/sfml/extlibs/bin/x64"
+	],
+	"searchPaths[toolchain:msvc+architecture:i686]": [
+		"${externalDir}/sfml/extlibs/bin/x86"
 	],
 	"abstracts:sfml": {
 		"language": "C++",
 		"settings:Cxx": {
 			"cppStandard": "c++20",
 			"runtimeTypeInformation": false,
-			"staticRuntimeLibrary": false,
 			"cppFilesystem": true,
 			"warningsPreset": "strict",
 			"treatWarningsAsErrors": true,
@@ -76,8 +78,11 @@
 				"precompiledHeader": "src/PCH.hpp",
 				"windowsSubSystem[:!debug]": "windows"
 			},
-			"copyFilesOnRun[:windows]": [
+			"copyFilesOnRun[toolchain:msvc]": [
 				"openal32.dll"
+			],
+			"copyFilesOnRun[toolchain:w64-mingw32]": [
+				"libopenal-1.dll"
 			]
 		},
 		"tests": {
@@ -101,8 +106,11 @@
 				"NoTests",
 				"-s"
 			],
-			"copyFilesOnRun[:windows]": [
+			"copyFilesOnRun[toolchain:msvc]": [
 				"openal32.dll"
+			],
+			"copyFilesOnRun[toolchain:w64-mingw32]": [
+				"libopenal-1.dll"
 			]
 		}
 	},
