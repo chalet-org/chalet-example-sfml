@@ -11,7 +11,7 @@
 			"runtimeTypeInformation": false,
 			"staticRuntimeLibrary": false,
 			"cppFilesystem": true,
-			"warnings": "strict",
+			"warningsPreset": "strict",
 			"treatWarningsAsErrors": true,
 			"defines[:debug]": [
 				"_DEBUG"
