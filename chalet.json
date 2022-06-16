@@ -7,6 +7,16 @@
 	"searchPaths[toolchain:msvc+architecture:i686]": [
 		"${externalDir}/SFML/extlibs/bin/x86"
 	],
+	"externalDependencies": {
+		"SFML": {
+			"repository": "https://github.com/SFML/SFML.git",
+			"branch": "2.6.x"
+		},
+		"catch2": {
+			"repository": "https://github.com/catchorg/Catch2.git",
+			"branch": "v2.x"
+		}
+	},
 	"abstracts:sfml": {
 		"language": "C++",
 		"settings:Cxx": {
@@ -112,16 +122,6 @@
 			"copyFilesOnRun[toolchain:w64-mingw32]": [
 				"libopenal-1.dll"
 			]
-		}
-	},
-	"externalDependencies": {
-		"SFML": {
-			"repository": "https://github.com/SFML/SFML.git",
-			"branch": "2.6.x"
-		},
-		"catch2": {
-			"repository": "https://github.com/catchorg/Catch2.git",
-			"branch": "v2.x"
 		}
 	},
 	"distribution": {
