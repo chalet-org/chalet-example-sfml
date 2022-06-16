@@ -2,10 +2,10 @@
 	"version": "0.0.1",
 	"name": "Chalet Example - SFML",
 	"searchPaths[toolchain:msvc+architecture:x86_64]": [
-		"${externalDir}/sfml/extlibs/bin/x64"
+		"${externalDir}/SFML/extlibs/bin/x64"
 	],
 	"searchPaths[toolchain:msvc+architecture:i686]": [
-		"${externalDir}/sfml/extlibs/bin/x86"
+		"${externalDir}/SFML/extlibs/bin/x86"
 	],
 	"abstracts:sfml": {
 		"language": "C++",
