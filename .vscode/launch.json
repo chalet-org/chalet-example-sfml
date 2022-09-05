@@ -5,12 +5,12 @@
 			"name": "MSVC",
 			"type": "cppvsdbg",
 			"request": "launch",
-			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"console": "integratedTerminal",
 			"preLaunchTask": "Build: Debug",
 			"program": "${workspaceFolder}/build/x64-pc-windows-msvc17_Debug/sfml-app.exe",
+			"args": [],
 			"envFile": "${workspaceFolder}/build/x64-pc-windows-msvc17_Debug/run.env"
 		},
 		{
@@ -34,11 +34,11 @@
 			"name": "GDB",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/build/Debug/sfml-app",
-			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"preLaunchTask": "Build: Debug",
+			"program": "${workspaceFolder}/build/Debug/sfml-app",
+			"args": [],
 			"windows": {
 				"MIMode": "gdb",
 				"miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe",
