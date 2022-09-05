@@ -2,10 +2,10 @@
 	"version": "0.0.1",
 	"name": "Chalet Example - SFML",
 	"searchPaths[toolchain:msvc+architecture:x86_64]": [
-		"${externalDir}/SFML/extlibs/bin/x64"
+		"${external:SFML}/extlibs/bin/x64"
 	],
 	"searchPaths[toolchain:msvc+architecture:i686]": [
-		"${externalDir}/SFML/extlibs/bin/x86"
+		"${external:SFML}/extlibs/bin/x86"
 	],
 	"externalDependencies": {
 		"SFML": {
@@ -30,10 +30,10 @@
 			],
 			"includeDirs": [
 				"src",
-				"${externalDir}/SFML/include"
+				"${external:SFML}/include"
 			],
 			"libDirs": [
-				"${externalBuildDir}/SFML/lib"
+				"${externalBuild:SFML}/lib"
 			],
 			"links[:!debug]": [
 				"sfml-graphics",
@@ -67,7 +67,7 @@
 				"vorbisfile"
 			],
 			"macosFrameworkPaths": [
-				"${externalDir}/SFML/extlibs/libs-osx/Frameworks"
+				"${external:SFML}/extlibs/libs-osx/Frameworks"
 			],
 			"windowsApplicationIcon": "platform/windows/app.ico",
 			"windowsApplicationManifest": "platform/windows/app.manifest"
@@ -76,7 +76,7 @@
 	"targets": {
 		"sfml": {
 			"kind": "cmakeProject",
-			"location": "${externalDir}/SFML",
+			"location": "${external:SFML}",
 			"recheck": false,
 			"rebuild": false
 		},
@@ -107,7 +107,7 @@
 				"buildSuffix": "sfml-app",
 				"precompiledHeader": "src/PCH.hpp",
 				"includeDirs": [
-					"${externalDir}/catch2/single_include",
+					"${external:catch2}/single_include",
 					"test"
 				]
 			},
