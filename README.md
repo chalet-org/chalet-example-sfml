@@ -10,3 +10,4 @@ To get started, [download Chalet](https://www.chalet-work.space/download), check
 * For MacOS: Install CodeLLDB and use the "LLDB" launch.json configuration
 * For Windows: Install the C/C++ extension and Build with MSVC and use the "MSVC" configuration
 * For Linux: Install the C/C++ extension and Use the "GDB" configuration
+  - Additional packages required (names my vary between distros): `libx11-dev` `xserver-xorg-dev` `xorg-dev` `libudev-dev` `libopenal-dev` `libvorbis-dev` `libflac-dev`
