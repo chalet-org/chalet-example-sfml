@@ -49,7 +49,7 @@
 				"sfml-window-d",
 				"sfml-system-d"
 			],
-			"links[:linux]": [
+			"links[:linux+toolchain:!w64-mingw32]": [
 				"X11"
 			],
 			"links[:windows]": [
