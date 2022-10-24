@@ -13,8 +13,8 @@ int main()
 	float screenScale = platform.getScreenScalingFactor(window.getSystemHandle());
 
 	sf::VideoMode mode {
-		static_cast<uint>(256.0f * screenScale),
-		static_cast<uint>(256.0f * screenScale),
+		static_cast<sf::Uint32>(256.0f * screenScale),
+		static_cast<sf::Uint32>(256.0f * screenScale),
 	};
 
 	sf::ContextSettings settings;

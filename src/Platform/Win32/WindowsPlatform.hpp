@@ -20,7 +20,7 @@ struct WindowsPlatform final : IPlatform
 
 private:
 	PBYTE getIconDirectory(const int inResourceId);
-	HICON getIconFromIconDirectory(PBYTE inIconDirectory, const uint inSize);
+	HICON getIconFromIconDirectory(PBYTE inIconDirectory, const std::uint32_t inSize);
 	DWORD sfmlWindowStyleToWin32WindowStyle(const sf::Uint32 inStyle);
 
 	float m_screenScalingFactor = 0.0f;

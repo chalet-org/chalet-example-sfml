@@ -62,10 +62,7 @@
 	#include <windows.h>
 #endif // _WIN32
 
-// Utils
-#include "Utility/Types.hpp"
-
 // Macros
-#define UNUSED(x) (void)(x)
+#define UNUSED(x) static_cast<void>(x)
 
 #endif // PRECOMPILED_HEADER_HPP

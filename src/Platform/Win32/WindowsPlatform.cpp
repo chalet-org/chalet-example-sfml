@@ -24,8 +24,8 @@ void WindowsPlatform::setIcon(const sf::WindowHandle& inHandle)
 	PBYTE iconDirectory = getIconDirectory(WIN32_ICON_MAIN);
 	std::array<int, 5> icons = { 16, 32, 48, 64, 128 };
 
-	std::size_t indexSmallIcon = static_cast<std::size_t>(std::min(std::max(std::ceil(m_screenScalingFactor - 1.0f), 0.0f), static_cast<float>(icons.size()) - 1.0f));
-	std::size_t indexBigIcon = static_cast<std::size_t>(std::min(std::max(std::ceil(m_screenScalingFactor - 1.0f), 0.0f) + 1.0f, static_cast<float>(icons.size()) - 1.0f));
+	std::size_t indexSmallIcon = static_cast<std::size_t>(std::min<float>(std::max<float>(std::ceil(m_screenScalingFactor - 1.0f), 0.0f), static_cast<float>(icons.size()) - 1.0f));
+	std::size_t indexBigIcon = static_cast<std::size_t>(std::min<float>(std::max<float>(std::ceil(m_screenScalingFactor - 1.0f), 0.0f) + 1.0f, static_cast<float>(icons.size()) - 1.0f));
 
 	HICON smallIcon = getIconFromIconDirectory(iconDirectory, icons[indexSmallIcon]);
 	HICON bigIcon = getIconFromIconDirectory(iconDirectory, icons[indexBigIcon]);
@@ -142,7 +142,7 @@ PBYTE WindowsPlatform::getIconDirectory(const int inResourceId)
  * This will attempt to load a single icon from an icon directory
  * If the requested size isn't found, the first one is returned
  *****************************************************************************/
-HICON WindowsPlatform::getIconFromIconDirectory(PBYTE inIconDirectory, const uint inSize)
+HICON WindowsPlatform::getIconFromIconDirectory(PBYTE inIconDirectory, const std::uint32_t inSize)
 {
 	HMODULE hModule = GetModuleHandle(nullptr);
 	int resourceId = LookupIconIdFromDirectoryEx(inIconDirectory, TRUE, inSize, inSize, LR_DEFAULTCOLOR | LR_SHARED);
