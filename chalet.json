@@ -53,7 +53,8 @@
 				"X11"
 			],
 			"links[:windows]": [
-				"gdi32"
+				"gdi32",
+				"dwmapi"
 			],
 			"macosFrameworks": [
 				"CoreFoundation",

@@ -34,7 +34,7 @@ MacOSPlatform::MacOSPlatform()
 /******************************************************************************
  *
  *****************************************************************************/
-void MacOSPlatform::setIcon(const sf::WindowHandle& inHandle)
+void MacOSPlatform::initialize(const sf::WindowHandle& inHandle)
 {
 	UNUSED(inHandle);
 

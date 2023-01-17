@@ -19,7 +19,7 @@ LinuxPlatform::LinuxPlatform()
 /******************************************************************************
  *
  *****************************************************************************/
-void LinuxPlatform::setIcon(const sf::WindowHandle& inHandle)
+void LinuxPlatform::initialize(const sf::WindowHandle& inHandle)
 {
 	UNUSED(inHandle);
 }
