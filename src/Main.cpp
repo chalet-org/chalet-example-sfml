@@ -26,7 +26,7 @@ int main()
 // settings.attributeFlags = sf::ContextSettings::Attribute::Core;
 #endif
 	window.create(mode, "SFML works!", sf::Style::Default, settings);
-	platform.setIcon(window.getSystemHandle());
+	platform.initialize(window.getSystemHandle());
 
 	[](const sf::ContextSettings& inSettings) {
 		std::cout << "OpenGL context created with version: "
