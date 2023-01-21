@@ -144,6 +144,7 @@
 			"macosBundle": {
 				"type": "app",
 				"infoPropertyList": "platform/macos/Info.plist.json",
+				"entitlementsPropertyList": "platform/macos/Entitlements.plist.json",
 				"icon": "platform/sfml-logo.png"
 			},
 			"linuxDesktopEntry": {
