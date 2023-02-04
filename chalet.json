@@ -9,10 +9,12 @@
 	],
 	"externalDependencies": {
 		"SFML": {
+			"kind": "git",
 			"repository": "https://github.com/SFML/SFML.git",
 			"branch": "2.6.x"
 		},
 		"catch2": {
+			"kind": "git",
 			"repository": "https://github.com/catchorg/Catch2.git",
 			"branch": "v2.x"
 		}
