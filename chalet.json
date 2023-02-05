@@ -1,10 +1,10 @@
 {
 	"version": "0.0.1",
 	"name": "Chalet Example - SFML",
-	"searchPaths[toolchain:msvc+architecture:x86_64]": [
+	"searchPaths[toolchain:x86_64-pc-windows-msvc]": [
 		"${external:SFML}/extlibs/bin/x64"
 	],
-	"searchPaths[toolchain:msvc+architecture:i686]": [
+	"searchPaths[toolchain:i686-pc-windows-msvc]": [
 		"${external:SFML}/extlibs/bin/x86"
 	],
 	"externalDependencies": {
@@ -91,7 +91,7 @@
 				"precompiledHeader": "src/PCH.hpp",
 				"windowsSubSystem[:!debug]": "windows"
 			},
-			"copyFilesOnRun[toolchain:msvc]": [
+			"copyFilesOnRun[toolchain:pc-windows-msvc]": [
 				"openal32.dll"
 			],
 			"copyFilesOnRun[toolchain:w64-mingw32]": [
@@ -119,7 +119,7 @@
 				"NoTests",
 				"-s"
 			],
-			"copyFilesOnRun[toolchain:msvc]": [
+			"copyFilesOnRun[toolchain:pc-windows-msvc]": [
 				"openal32.dll"
 			],
 			"copyFilesOnRun[toolchain:w64-mingw32]": [
