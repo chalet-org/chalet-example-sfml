@@ -58,7 +58,7 @@
 				"gdi32",
 				"dwmapi"
 			],
-			"macosFrameworks": [
+			"appleFrameworks": [
 				"CoreFoundation",
 				"CoreGraphics",
 				"FLAC",
@@ -69,7 +69,7 @@
 				"vorbisenc",
 				"vorbisfile"
 			],
-			"macosFrameworkPaths": [
+			"appleFrameworkPaths": [
 				"${external:SFML}/extlibs/libs-osx/Frameworks"
 			],
 			"windowsApplicationIcon": "platform/windows/app.ico",
