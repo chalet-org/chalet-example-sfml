@@ -11,7 +11,7 @@
 		"SFML": {
 			"kind": "git",
 			"repository": "https://github.com/SFML/SFML.git",
-			"branch": "2.6.x"
+			"tag": "2.6.0"
 		},
 		"catch2": {
 			"kind": "git",
