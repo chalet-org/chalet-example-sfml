@@ -2,6 +2,7 @@
 .chaletrc
 build
 dist
+.env*
 gmon.out
 chalet_external
 
