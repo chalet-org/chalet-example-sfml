@@ -1,14 +1,15 @@
-# Build system
+# Chalet
+build/
+chalet_external/
+dist/
 .chaletrc
-build
-dist
 .env*
-gmon.out
-chalet_external
 
-*.stats
+# Editors
+.idea/
+.vs/
+.vscode/
+
+# Other
 Thumbs.db
 .DS_Store
-
-# Project specific
-#
