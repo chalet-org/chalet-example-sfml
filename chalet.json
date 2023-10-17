@@ -99,7 +99,6 @@
 			]
 		},
 		"tests": {
-			"condition": "[:!debug]",
 			"kind": "executable",
 			"extends": "sfml",
 			"files": [
