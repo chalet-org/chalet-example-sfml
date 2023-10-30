@@ -9,13 +9,11 @@ int main()
 #endif
 
 	sf::RenderWindow window;
+
 	// in Windows at least, this must be called before creating the window
 	float screenScale = platform.getScreenScalingFactor(window.getSystemHandle());
 
-	sf::VideoMode mode {
-		static_cast<sf::Uint32>(256.0f * screenScale),
-		static_cast<sf::Uint32>(256.0f * screenScale),
-	};
+	sf::VideoMode mode(640, 480);
 
 	sf::ContextSettings settings;
 #if !defined(SFML_SYSTEM_MACOS)
@@ -37,19 +35,25 @@ int main()
 				  << std::endl;
 	}(window.getSettings());
 
-	sf::CircleShape shape(static_cast<float>(window.getSize().x / 2));
-	shape.setFillColor(sf::Color::White);
-
 	auto shapeTexture = std::make_unique<sf::Texture>();
 	if (!shapeTexture->loadFromFile("content/sfml.png"))
 		return EXIT_FAILURE;
+
+	sf::CircleShape shape(static_cast<float>(shapeTexture->getSize().y) / screenScale);
+	shape.setFillColor(sf::Color::White);
+	shape.setPosition(
+		static_cast<float>(mode.width / 2) - shape.getRadius(),
+		static_cast<float>(mode.height / 2) - shape.getRadius()
+	);
 
 	shape.setTexture(shapeTexture.get());
 
 	sf::Event event;
 
+	sf::Color clearColor{ 100, 149, 237 };
+
 	window.setFramerateLimit(30);
-	window.clear();
+	window.clear(clearColor);
 	window.display();
 
 	while (window.isOpen())
@@ -60,7 +64,7 @@ int main()
 				window.close();
 		}
 
-		window.clear();
+		window.clear(clearColor);
 		window.draw(shape);
 		window.display();
 	}
