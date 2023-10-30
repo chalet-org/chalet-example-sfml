@@ -10,10 +10,11 @@ int main()
 
 	sf::RenderWindow window;
 
-	// in Windows at least, this must be called before creating the window
-	float screenScale = platform.getScreenScalingFactor(window.getSystemHandle());
+	// If needed
+	// float screenScale = platform.getScreenScalingFactor(window.getSystemHandle());
 
-	sf::VideoMode mode(640, 480);
+	sf::Vector2u resolution{ 640, 480 };
+	sf::VideoMode mode(resolution.x, resolution.y);
 
 	sf::ContextSettings settings;
 #if !defined(SFML_SYSTEM_MACOS)
@@ -39,7 +40,7 @@ int main()
 	if (!shapeTexture->loadFromFile("content/sfml.png"))
 		return EXIT_FAILURE;
 
-	sf::CircleShape shape(static_cast<float>(shapeTexture->getSize().y) / screenScale);
+	sf::CircleShape shape(static_cast<float>(shapeTexture->getSize().y) / 2.0f);
 	shape.setFillColor(sf::Color::White);
 	shape.setPosition(
 		static_cast<float>(mode.width / 2) - shape.getRadius(),
