@@ -7,6 +7,9 @@
 	"searchPaths[toolchain:i686-pc-windows-msvc]": [
 		"${external:SFML}/extlibs/bin/x86"
 	],
+	"searchPaths[:macos]": [
+		"${external:SFML}/extlibs/libs-osx/Frameworks"
+	],
 	"externalDependencies": {
 		"SFML": {
 			"kind": "git",
