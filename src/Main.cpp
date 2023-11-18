@@ -13,7 +13,7 @@ int main()
 	// If needed
 	// float screenScale = platform.getScreenScalingFactor(window.getSystemHandle());
 
-	sf::Vector2u resolution{ 640, 480 };
+	sf::Vector2u resolution { 640, 480 };
 	sf::VideoMode mode(resolution.x, resolution.y);
 
 	sf::ContextSettings settings;
@@ -44,14 +44,13 @@ int main()
 	shape.setFillColor(sf::Color::White);
 	shape.setPosition(
 		static_cast<float>(mode.width / 2) - shape.getRadius(),
-		static_cast<float>(mode.height / 2) - shape.getRadius()
-	);
+		static_cast<float>(mode.height / 2) - shape.getRadius());
 
 	shape.setTexture(shapeTexture.get());
 
 	sf::Event event;
 
-	sf::Color clearColor{ 100, 149, 237 };
+	sf::Color clearColor { 100, 149, 237 };
 
 	window.setFramerateLimit(30);
 	window.clear(clearColor);
