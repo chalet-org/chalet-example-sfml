@@ -1,6 +1,6 @@
 {
 	"version": "0.0.1",
-	"name": "Chalet Example - SFML",
+	"name": "chalet-example-sfml",
 	"searchPaths[toolchain:x86_64-pc-windows-msvc]": [
 		"${external:SFML}/extlibs/bin/x64"
 	],
@@ -12,11 +12,6 @@
 			"kind": "git",
 			"repository": "https://github.com/SFML/SFML.git",
 			"tag": "2.6.1"
-		},
-		"catch2": {
-			"kind": "git",
-			"repository": "https://github.com/catchorg/Catch2.git",
-			"branch": "v2.x"
 		}
 	},
 	"abstracts:sfml": {
@@ -91,33 +86,6 @@
 				"precompiledHeader": "src/PCH.hpp",
 				"windowsSubSystem[:!debug]": "windows"
 			},
-			"copyFilesOnRun[toolchain:pc-windows-msvc]": [
-				"openal32.dll"
-			],
-			"copyFilesOnRun[toolchain:w64-mingw32]": [
-				"libopenal-1.dll"
-			]
-		},
-		"tests": {
-			"kind": "executable",
-			"extends": "sfml",
-			"files": [
-				"test/**.cpp",
-				"src/*/**.cpp"
-			],
-			"settings:Cxx": {
-				"buildSuffix": "sfml-app",
-				"precompiledHeader": "src/PCH.hpp",
-				"includeDirs": [
-					"${external:catch2}/single_include",
-					"test"
-				]
-			},
-			"defaultRunArguments": [
-				"-w",
-				"NoTests",
-				"-s"
-			],
 			"copyFilesOnRun[toolchain:pc-windows-msvc]": [
 				"openal32.dll"
 			],
