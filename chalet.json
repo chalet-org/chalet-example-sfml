@@ -2,13 +2,13 @@
 	"version": "0.0.1",
 	"name": "chalet-example-sfml",
 	"searchPaths[toolchain:x86_64-pc-windows-msvc]": [
-		"${external:SFML}/extlibs/bin/x64"
+		"${external:sfml}/extlibs/bin/x64"
 	],
 	"searchPaths[toolchain:i686-pc-windows-msvc]": [
-		"${external:SFML}/extlibs/bin/x86"
+		"${external:sfml}/extlibs/bin/x86"
 	],
 	"externalDependencies": {
-		"SFML": {
+		"sfml": {
 			"kind": "git",
 			"repository": "https://github.com/SFML/SFML.git",
 			"tag": "2.6.1"
@@ -27,10 +27,10 @@
 			],
 			"includeDirs": [
 				"src",
-				"${external:SFML}/include"
+				"${external:sfml}/include"
 			],
 			"libDirs": [
-				"${externalBuild:SFML}/lib"
+				"${externalBuild:sfml}/lib"
 			],
 			"links[:!debug]": [
 				"sfml-graphics",
@@ -65,7 +65,7 @@
 				"vorbisfile"
 			],
 			"appleFrameworkPaths": [
-				"${external:SFML}/extlibs/libs-osx/Frameworks"
+				"${external:sfml}/extlibs/libs-osx/Frameworks"
 			],
 			"windowsApplicationIcon": "platform/windows/app.ico",
 			"windowsApplicationManifest": "platform/windows/app.manifest"
@@ -74,7 +74,7 @@
 	"targets": {
 		"sfml": {
 			"kind": "cmakeProject",
-			"location": "${external:SFML}",
+			"location": "${external:sfml}",
 			"recheck": false,
 			"rebuild": false
 		},
