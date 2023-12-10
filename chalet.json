@@ -1,17 +1,69 @@
 {
 	"version": "0.0.1",
 	"name": "chalet-example-sfml",
-	"searchPaths[toolchain:x86_64-pc-windows-msvc]": [
-		"${external:sfml}/extlibs/bin/x64"
-	],
-	"searchPaths[toolchain:i686-pc-windows-msvc]": [
-		"${external:sfml}/extlibs/bin/x86"
-	],
 	"externalDependencies": {
 		"sfml": {
 			"kind": "git",
 			"repository": "https://github.com/SFML/SFML.git",
 			"tag": "2.6.1"
+		}
+	},
+	"package": {
+		"sfml.shared": {
+			"searchPaths[toolchain:x86_64-pc-windows-msvc]": [
+				"${external:sfml}/extlibs/bin/x64"
+			],
+			"searchPaths[toolchain:i686-pc-windows-msvc]": [
+				"${external:sfml}/extlibs/bin/x86"
+			],
+			"copyFilesOnRun[toolchain:pc-windows-msvc]": [
+				"openal32.dll"
+			],
+			"copyFilesOnRun[toolchain:w64-mingw32]": [
+				"libopenal-1.dll"
+			],
+			"settings:Cxx": {
+				"includeDirs": [
+					"${external:sfml}/include"
+				],
+				"libDirs": [
+					"${externalBuild:sfml}/lib"
+				],
+				"links[:!debug]": [
+					"sfml-graphics",
+					"sfml-audio",
+					"sfml-network",
+					"sfml-window",
+					"sfml-system"
+				],
+				"links[:debug]": [
+					"sfml-graphics-d",
+					"sfml-audio-d",
+					"sfml-network-d",
+					"sfml-window-d",
+					"sfml-system-d"
+				],
+				"links[:linux+toolchain:!w64-mingw32]": [
+					"X11"
+				],
+				"links[:windows]": [
+					"gdi32"
+				],
+				"appleFrameworks": [
+					"CoreFoundation",
+					"CoreGraphics",
+					"FLAC",
+					"freetype",
+					"ogg",
+					"openal",
+					"vorbis",
+					"vorbisenc",
+					"vorbisfile"
+				],
+				"appleFrameworkPaths": [
+					"${external:sfml}/extlibs/libs-osx/Frameworks"
+				]
+			}
 		}
 	},
 	"abstracts:sfml": {
@@ -26,46 +78,10 @@
 				"_DEBUG"
 			],
 			"includeDirs": [
-				"src",
-				"${external:sfml}/include"
-			],
-			"libDirs": [
-				"${externalBuild:sfml}/lib"
-			],
-			"links[:!debug]": [
-				"sfml-graphics",
-				"sfml-audio",
-				"sfml-network",
-				"sfml-window",
-				"sfml-system"
-			],
-			"links[:debug]": [
-				"sfml-graphics-d",
-				"sfml-audio-d",
-				"sfml-network-d",
-				"sfml-window-d",
-				"sfml-system-d"
-			],
-			"links[:linux+toolchain:!w64-mingw32]": [
-				"X11"
+				"src"
 			],
 			"links[:windows]": [
-				"gdi32",
 				"dwmapi"
-			],
-			"appleFrameworks": [
-				"CoreFoundation",
-				"CoreGraphics",
-				"FLAC",
-				"freetype",
-				"ogg",
-				"openal",
-				"vorbis",
-				"vorbisenc",
-				"vorbisfile"
-			],
-			"appleFrameworkPaths": [
-				"${external:sfml}/extlibs/libs-osx/Frameworks"
 			],
 			"windowsApplicationIcon": "platform/windows/app.ico",
 			"windowsApplicationManifest": "platform/windows/app.manifest"
@@ -86,11 +102,8 @@
 				"precompiledHeader": "src/PCH.hpp",
 				"windowsSubSystem[:!debug]": "windows"
 			},
-			"copyFilesOnRun[toolchain:pc-windows-msvc]": [
-				"openal32.dll"
-			],
-			"copyFilesOnRun[toolchain:w64-mingw32]": [
-				"libopenal-1.dll"
+			"importPackages": [
+				"sfml.shared"
 			]
 		}
 	},
