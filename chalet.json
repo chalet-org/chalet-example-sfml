@@ -51,19 +51,12 @@
 					"sfml-window-d",
 					"sfml-system-d"
 				],
-				"links[:macos+:!debug]": [
+				"links[:macos]": [
 					"${externalBuild:sfml}/lib/${so:sfml-graphics}",
 					"${externalBuild:sfml}/lib/${so:sfml-audio}",
 					"${externalBuild:sfml}/lib/${so:sfml-network}",
 					"${externalBuild:sfml}/lib/${so:sfml-window}",
 					"${externalBuild:sfml}/lib/${so:sfml-system}"
-				],
-				"links[:macos+:debug]": [
-					"${externalBuild:sfml}/lib/${so:sfml-graphics-d}",
-					"${externalBuild:sfml}/lib/${so:sfml-audio-d}",
-					"${externalBuild:sfml}/lib/${so:sfml-network-d}",
-					"${externalBuild:sfml}/lib/${so:sfml-window-d}",
-					"${externalBuild:sfml}/lib/${so:sfml-system-d}"
 				],
 				"links[:linux+toolchain:!w64-mingw32]": [
 					"X11"
