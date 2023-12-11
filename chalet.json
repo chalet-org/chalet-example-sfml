@@ -6,6 +6,11 @@
 			"kind": "git",
 			"repository": "https://github.com/SFML/SFML.git",
 			"tag": "2.6.1"
+		},
+		"sfml-patch": {
+			"kind": "script",
+			"condition": "[:macos]",
+			"file": "platform/macos/cmake_patch.sh"
 		}
 	},
 	"package": {
