@@ -29,14 +29,28 @@
 				"libDirs": [
 					"${externalBuild:sfml}/lib"
 				],
-				"links[:!debug]": [
+				"links[:!macos+:!debug]": [
+					"sfml-graphics",
+					"sfml-audio",
+					"sfml-network",
+					"sfml-window",
+					"sfml-system"
+				],
+				"links[:!macos+:debug]": [
+					"sfml-graphics-d",
+					"sfml-audio-d",
+					"sfml-network-d",
+					"sfml-window-d",
+					"sfml-system-d"
+				],
+				"links[:macos+:!debug]": [
 					"${externalBuild:sfml}/lib/${so:sfml-graphics}",
 					"${externalBuild:sfml}/lib/${so:sfml-audio}",
 					"${externalBuild:sfml}/lib/${so:sfml-network}",
 					"${externalBuild:sfml}/lib/${so:sfml-window}",
 					"${externalBuild:sfml}/lib/${so:sfml-system}"
 				],
-				"links[:debug]": [
+				"links[:macos+:debug]": [
 					"${externalBuild:sfml}/lib/${so:sfml-graphics-d}",
 					"${externalBuild:sfml}/lib/${so:sfml-audio-d}",
 					"${externalBuild:sfml}/lib/${so:sfml-network-d}",
