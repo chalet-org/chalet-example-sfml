@@ -10,7 +10,10 @@
 		"sfml-patch": {
 			"kind": "script",
 			"condition": "[:macos]",
-			"file": "platform/macos/cmake_patch.sh"
+			"file": "platform/macos/cmake_patch.sh",
+			"arguments": [
+				"${external:sfml}"
+			]
 		}
 	},
 	"package": {
