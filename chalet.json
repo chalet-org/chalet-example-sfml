@@ -70,7 +70,7 @@
 					"FLAC",
 					"freetype",
 					"ogg",
-					"openal",
+					"OpenAL",
 					"vorbis",
 					"vorbisenc",
 					"vorbisfile"
