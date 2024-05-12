@@ -3,7 +3,7 @@
 	"CFBundleDisplayName": "${name}",
 	"CFBundleExecutable": "${mainExecutable}",
 	"CFBundleIconFile": "${icon}",
-	"CFBundleIdentifier": "com.developer.application",
+	"CFBundleIdentifier": "com.developer.sfmlapp",
 	"CFBundleInfoDictionaryVersion": "6.0",
 	"CFBundleName": "${bundleName}",
 	"CFBundlePackageType": "APPL",
