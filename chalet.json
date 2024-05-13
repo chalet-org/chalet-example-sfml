@@ -107,7 +107,15 @@
 			"kind": "cmakeProject",
 			"location": "${external:sfml}",
 			"recheck": false,
-			"rebuild": false
+			"rebuild": false,
+			"defines[toolchain:x86_64-apple-darwin]": [
+				"SFML_USE_SYSTEM_DEPS=ON",
+				"FLAC_INCLUDE_DIR=${external:sfml}/extlibs/headers",
+				"FLAC_LIBRARY=${external:sfml}/extlibs/libs-osx/Frameworks/FLAC.framework",
+				"FREETYPE_INCLUDE_DIR_ft2build=${external:sfml}/extlibs/headers/freetype2",
+				"FREETYPE_INCLUDE_DIR_freetype2=${external:sfml}/extlibs/headers",
+				"FREETYPE_LIBRARY=${external:sfml}/extlibs/libs-osx/Frameworks/freetype.framework"
+			]
 		},
 		"sfml-app": {
 			"kind": "executable",
