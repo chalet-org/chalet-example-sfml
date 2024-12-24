@@ -115,6 +115,17 @@
 				"SFML_BUILD_NETWORK=ON",
 				"SFML_BUILD_EXAMPLES=OFF",
 				"SFML_BUILD_DOC=OFF"
+			],
+			"defines[toolchain:x86_64-apple-darwin]": [
+				"SFML_USE_SYSTEM_DEPS=OFF",
+				"FREETYPE_INCLUDE_DIR_ft2build=${external:sfml}/extlibs/headers/freetype2",
+				"FREETYPE_INCLUDE_DIR_freetype2=${external:sfml}/extlibs/headers",
+				"FLAC_LIBRARY=${external:sfml}/extlibs/libs-osx/Frameworks/FLAC.framework",
+				"FREETYPE_LIBRARY=${external:sfml}/extlibs/libs-osx/Frameworks/freetype.framework",
+				"VORBIS_LIBRARY=${external:sfml}/extlibs/libs-osx/Frameworks/vorbis.framework",
+				"VORBISFILE_LIBRARY=${external:sfml}/extlibs/libs-osx/Frameworks/vorbisfile.framework",
+				"VORBISENC_LIBRARY=${external:sfml}/extlibs/libs-osx/Frameworks/vorbisenc.framework",
+				"OGG_LIBRARY=${external:sfml}/extlibs/libs-osx/Frameworks/ogg.framework"
 			]
 		},
 		"sfml-app": {
