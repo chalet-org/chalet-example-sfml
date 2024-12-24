@@ -107,7 +107,15 @@
 			"kind": "cmakeProject",
 			"location": "${external:sfml}",
 			"recheck": false,
-			"rebuild": false
+			"rebuild": false,
+			"defines": [
+				"SFML_BUILD_WINDOW=ON",
+				"SFML_BUILD_GRAPHICS=ON",
+				"SFML_BUILD_AUDIO=ON",
+				"SFML_BUILD_NETWORK=ON",
+				"SFML_BUILD_EXAMPLES=OFF",
+				"SFML_BUILD_DOC=OFF"
+			]
 		},
 		"sfml-app": {
 			"kind": "executable",
