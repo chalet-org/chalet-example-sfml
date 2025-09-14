@@ -48,7 +48,7 @@
 // #include <thread>
 // #include <type_traits>
 
-// Windows
+// Windows API
 #ifdef _WIN32
 	#ifndef UNICODE
 		#define UNICODE
@@ -61,8 +61,5 @@
 	#define WIN32_LEAN_AND_MEAN
 	#include <windows.h>
 #endif // _WIN32
-
-// Macros
-#define UNUSED(x) static_cast<void>(x)
 
 #endif // PRECOMPILED_HEADER_HPP

@@ -34,33 +34,24 @@ MacOSPlatform::MacOSPlatform()
 /******************************************************************************
  *
  *****************************************************************************/
-void MacOSPlatform::initialize(const sf::WindowHandle& inHandle)
+void MacOSPlatform::initialize(const sf::WindowHandle&)
 {
-	UNUSED(inHandle);
-
 	// Not applicable on MacOS
 }
 
 /******************************************************************************
  *
  *****************************************************************************/
-void MacOSPlatform::toggleFullscreen(const sf::WindowHandle& inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u& inResolution)
+void MacOSPlatform::toggleFullscreen(const sf::WindowHandle&, const sf::State, const std::uint32_t, const bool, const sf::Vector2u&)
 {
-	UNUSED(inHandle);
-	UNUSED(inStyle);
-	UNUSED(inWindowed);
-	UNUSED(inResolution);
-
 	// Not applicable on MacOS
 }
 
 /******************************************************************************
  *
  *****************************************************************************/
-float MacOSPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
+float MacOSPlatform::getScreenScalingFactor(const sf::WindowHandle&)
 {
-	UNUSED(inHandle);
-
 	CGDirectDisplayID mainDisplayId = CGMainDisplayID();
 	size_t width = CGDisplayPixelsWide(mainDisplayId);
 	size_t height = CGDisplayPixelsHigh(mainDisplayId);
@@ -81,10 +72,8 @@ float MacOSPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
 /******************************************************************************
  *
  *****************************************************************************/
-float MacOSPlatform::getRefreshRate(const sf::WindowHandle& inHandle)
+float MacOSPlatform::getRefreshRate(const sf::WindowHandle&)
 {
-	UNUSED(inHandle);
-
 	CGDirectDisplayID mainDisplayId = CGMainDisplayID();
 	CGDisplayModeRef displayMode = CGDisplayCopyDisplayMode(mainDisplayId);
 	double refresh = CGDisplayModeGetRefreshRate(displayMode);

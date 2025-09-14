@@ -8,13 +8,11 @@ int main()
 	std::cout << "Hello World!" << std::endl;
 #endif
 
-	sf::RenderWindow window;
-
 	// If needed
 	// float screenScale = platform.getScreenScalingFactor(window.getSystemHandle());
 
 	sf::Vector2u resolution { 640, 480 };
-	sf::VideoMode mode(resolution.x, resolution.y);
+	sf::VideoMode mode(resolution);
 
 	sf::ContextSettings settings;
 #if !defined(SFML_SYSTEM_MACOS)
@@ -24,8 +22,8 @@ int main()
 // settings.stencilBits = 8;
 // settings.attributeFlags = sf::ContextSettings::Attribute::Core;
 #endif
-	window.create(mode, "SFML works!", sf::Style::Default, settings);
-	platform.initialize(window.getSystemHandle());
+	sf::RenderWindow window(mode, "SFML works!", sf::State::Windowed, settings);
+	platform.initialize(window.getNativeHandle());
 
 	[](const sf::ContextSettings& inSettings) {
 		std::cout << "OpenGL context created with version: "
@@ -42,13 +40,12 @@ int main()
 
 	sf::CircleShape shape(static_cast<float>(shapeTexture->getSize().y) / 2.0f);
 	shape.setFillColor(sf::Color::White);
-	shape.setPosition(
-		static_cast<float>(mode.width / 2) - shape.getRadius(),
-		static_cast<float>(mode.height / 2) - shape.getRadius());
+	shape.setPosition(sf::Vector2f {
+		static_cast<float>(mode.size.x / 2) - shape.getRadius(),
+		static_cast<float>(mode.size.y / 2) - shape.getRadius(),
+	});
 
 	shape.setTexture(shapeTexture.get());
-
-	sf::Event event;
 
 	sf::Color clearColor { 100, 149, 237 };
 
@@ -58,9 +55,9 @@ int main()
 
 	while (window.isOpen())
 	{
-		while (window.pollEvent(event))
+		while (const auto event = window.pollEvent())
 		{
-			if (event.type == sf::Event::Closed)
+			if (event->is<sf::Event::Closed>())
 				window.close();
 		}
 

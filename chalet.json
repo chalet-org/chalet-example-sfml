@@ -5,51 +5,39 @@
 		"sfml": {
 			"kind": "git",
 			"repository": "https://github.com/SFML/SFML.git",
-			"tag": "2.6.1"
-		},
-		"sfml-patch": {
+			"tag": "3.0.1"
+		}
+		/*"sfml-patch": {
 			"kind": "script",
 			"condition": "[:macos]",
 			"file": "platform/macos/cmake_patch.sh",
 			"arguments": [
 				"${external:sfml}"
 			]
-		}
+		}*/
 	},
 	"package": {
 		"sfml.shared": {
-			"searchPaths[toolchain:x86_64-pc-windows-msvc]": [
-				"${external:sfml}/extlibs/bin/x64"
-			],
-			"searchPaths[toolchain:i686-pc-windows-msvc]": [
-				"${external:sfml}/extlibs/bin/x86"
-			],
-			"copyFilesOnRun[toolchain:pc-windows-msvc]": [
-				"openal32.dll"
-			],
-			"copyFilesOnRun[toolchain:w64-mingw32]": [
-				"libopenal-1.dll"
+			"searchPaths": [
+				"${externalBuild:sfml}/install/bin"
 			],
 			"settings:Cxx": {
 				"includeDirs": [
-					"${external:sfml}/include"
-				],
-				"libDirs": [
-					"${externalBuild:sfml}/lib"
+					"${externalBuild:sfml}/install/include"
 				],
 				"links[:!macos+:!debug]": [
-					"sfml-graphics",
-					"sfml-audio",
-					"sfml-network",
-					"sfml-window",
-					"sfml-system"
+					"${externalBuild:sfml}/install/lib/${ar:sfml-graphics}",
+					"${externalBuild:sfml}/install/lib/${ar:sfml-audio}",
+					"${externalBuild:sfml}/install/lib/${ar:sfml-network}",
+					"${externalBuild:sfml}/install/lib/${ar:sfml-window}",
+					"${externalBuild:sfml}/install/lib/${ar:sfml-system}"
 				],
 				"links[:!macos+:debug]": [
-					"sfml-graphics-d",
-					"sfml-audio-d",
-					"sfml-network-d",
-					"sfml-window-d",
-					"sfml-system-d"
+					"${externalBuild:sfml}/install/lib/${ar:sfml-graphics-d}",
+					"${externalBuild:sfml}/install/lib/${ar:sfml-audio-d}",
+					"${externalBuild:sfml}/install/lib/${ar:sfml-network-d}",
+					"${externalBuild:sfml}/install/lib/${ar:sfml-window-d}",
+					"${externalBuild:sfml}/install/lib/${ar:sfml-system-d}"
 				],
 				"links[:macos]": [
 					"${externalBuild:sfml}/lib/${so:sfml-graphics}",
@@ -70,7 +58,6 @@
 					"FLAC",
 					"freetype",
 					"ogg",
-					"OpenAL",
 					"vorbis",
 					"vorbisenc",
 					"vorbisfile"
@@ -108,7 +95,9 @@
 			"location": "${external:sfml}",
 			"recheck": false,
 			"rebuild": false,
+			"install": true,
 			"defines": [
+				"BUILD_SHARED_LIBS=ON",
 				"SFML_BUILD_WINDOW=ON",
 				"SFML_BUILD_GRAPHICS=ON",
 				"SFML_BUILD_AUDIO=ON",

@@ -14,14 +14,14 @@ struct WindowsPlatform final : IPlatform
 	WindowsPlatform();
 
 	virtual void initialize(const sf::WindowHandle& inHandle) final;
-	virtual void toggleFullscreen(const sf::WindowHandle& inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u& inResolution) final;
+	virtual void toggleFullscreen(const sf::WindowHandle& inHandle, const sf::State inState, const std::uint32_t inStyle, const bool inWindowed, const sf::Vector2u& inResolution) final;
 	virtual float getScreenScalingFactor(const sf::WindowHandle& inHandle) final;
 	virtual float getRefreshRate(const sf::WindowHandle& inHandle) final;
 
 private:
 	PBYTE getIconDirectory(const int inResourceId);
 	HICON getIconFromIconDirectory(PBYTE inIconDirectory, const uint32_t inSize);
-	DWORD sfmlWindowStyleToWin32WindowStyle(const sf::Uint32 inStyle);
+	DWORD sfmlWindowStyleToWin32WindowStyle(const sf::State inState, const std::uint32_t inStyle);
 
 	float m_screenScalingFactor = 0.0f;
 };

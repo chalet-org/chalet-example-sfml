@@ -7,7 +7,7 @@ struct IPlatform
 {
 	virtual ~IPlatform() = default;
 	virtual void initialize(const sf::WindowHandle& inHandle) = 0;
-	virtual void toggleFullscreen(const sf::WindowHandle& inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u& inResolution) = 0;
+	virtual void toggleFullscreen(const sf::WindowHandle& inHandle, const sf::State inState, const std::uint32_t inStyle, const bool inWindowed, const sf::Vector2u& inResolution) = 0;
 	virtual float getRefreshRate(const sf::WindowHandle& inHandle) = 0;
 	virtual float getScreenScalingFactor(const sf::WindowHandle& inHandle) = 0;
 };

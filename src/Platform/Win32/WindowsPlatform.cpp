@@ -58,9 +58,9 @@ void WindowsPlatform::initialize(const sf::WindowHandle& inHandle)
 /******************************************************************************
  *
  *****************************************************************************/
-void WindowsPlatform::toggleFullscreen(const sf::WindowHandle& inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u& inResolution)
+void WindowsPlatform::toggleFullscreen(const sf::WindowHandle& inHandle, const sf::State inState, const std::uint32_t inStyle, const bool inWindowed, const sf::Vector2u& inResolution)
 {
-	DWORD win32Style = sfmlWindowStyleToWin32WindowStyle(inStyle);
+	DWORD win32Style = sfmlWindowStyleToWin32WindowStyle(inState, inStyle);
 	UINT flags = SWP_DRAWFRAME | SWP_FRAMECHANGED;
 
 	if (inWindowed)
@@ -106,10 +106,8 @@ void WindowsPlatform::toggleFullscreen(const sf::WindowHandle& inHandle, const s
 /******************************************************************************
  * Gets the screen scaling factor of the device from the supplied handle
  *****************************************************************************/
-float WindowsPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
+float WindowsPlatform::getScreenScalingFactor(const sf::WindowHandle&)
 {
-	UNUSED(inHandle);
-
 	if (m_screenScalingFactor != 0.0f)
 		return m_screenScalingFactor;
 
@@ -125,10 +123,8 @@ float WindowsPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
 /******************************************************************************
  * Gets the refresh rate of the device from the supplied handle
  *****************************************************************************/
-float WindowsPlatform::getRefreshRate(const sf::WindowHandle& inHandle)
+float WindowsPlatform::getRefreshRate(const sf::WindowHandle&)
 {
-	UNUSED(inHandle);
-
 	HDC screenDC = GetDC(nullptr);
 	int refresh = GetDeviceCaps(screenDC, VREFRESH);
 	ReleaseDC(nullptr, screenDC);
@@ -173,10 +169,10 @@ HICON WindowsPlatform::getIconFromIconDirectory(PBYTE inIconDirectory, const uin
 /******************************************************************************
  * Takes an SFML window style and matches it back to the Win32 equivalent
  *****************************************************************************/
-DWORD WindowsPlatform::sfmlWindowStyleToWin32WindowStyle(const sf::Uint32 inStyle)
+DWORD WindowsPlatform::sfmlWindowStyleToWin32WindowStyle(const sf::State inState, const std::uint32_t inStyle)
 {
 	DWORD style = 0;
-	if (inStyle == sf::Style::None || inStyle == sf::Style::Fullscreen)
+	if (inState == sf::State::Fullscreen)
 	{
 		style = WS_VISIBLE | WS_POPUP | WS_CLIPCHILDREN | WS_CLIPSIBLINGS;
 	}

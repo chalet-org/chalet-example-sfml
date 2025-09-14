@@ -19,29 +19,22 @@ LinuxPlatform::LinuxPlatform()
 /******************************************************************************
  *
  *****************************************************************************/
-void LinuxPlatform::initialize(const sf::WindowHandle& inHandle)
+void LinuxPlatform::initialize(const sf::WindowHandle&)
 {
-	UNUSED(inHandle);
 }
 
 /******************************************************************************
  *
  *****************************************************************************/
-void LinuxPlatform::toggleFullscreen(const sf::WindowHandle& inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u& inResolution)
+void LinuxPlatform::toggleFullscreen(const sf::WindowHandle&, const sf::State, const std::uint32_t, const bool, const sf::Vector2u&)
 {
-	UNUSED(inHandle);
-	UNUSED(inStyle);
-	UNUSED(inWindowed);
-	UNUSED(inResolution);
 }
 
 /******************************************************************************
  *
  *****************************************************************************/
-float LinuxPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
+float LinuxPlatform::getScreenScalingFactor(const sf::WindowHandle&)
 {
-	UNUSED(inHandle);
-
 	// technique from: https://github.com/glfw/glfw/issues/1019
 
 	Display* dpy;
@@ -76,9 +69,8 @@ float LinuxPlatform::getScreenScalingFactor(const sf::WindowHandle& inHandle)
 /******************************************************************************
  *
  *****************************************************************************/
-float LinuxPlatform::getRefreshRate(const sf::WindowHandle& inHandle)
+float LinuxPlatform::getRefreshRate(const sf::WindowHandle&)
 {
-	UNUSED(inHandle);
 	return 59.0f;
 }
 }
