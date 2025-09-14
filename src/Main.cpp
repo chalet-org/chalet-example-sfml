@@ -25,6 +25,10 @@ int main()
 	sf::RenderWindow window(mode, "SFML works!", sf::State::Windowed, settings);
 	platform.initialize(window.getNativeHandle());
 
+	// Center the window manually
+	auto desktopMode = sf::VideoMode::getDesktopMode();
+	window.setPosition(sf::Vector2i(desktopMode.size.x / 2 - resolution.x / 2, desktopMode.size.y / 2 - resolution.y / 2));
+
 	[](const sf::ContextSettings& inSettings) {
 		std::cout << "OpenGL context created with version: "
 				  << inSettings.majorVersion << "." << inSettings.minorVersion

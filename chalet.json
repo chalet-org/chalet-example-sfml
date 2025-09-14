@@ -18,26 +18,29 @@
 	},
 	"package": {
 		"sfml.shared": {
-			"searchPaths": [
+			"searchPaths[:windows]": [
 				"${externalBuild:sfml}/install/bin"
+			],
+			"searchPaths[:!windows]": [
+				"${externalBuild:sfml}/install/lib"
 			],
 			"settings:Cxx": {
 				"includeDirs": [
 					"${externalBuild:sfml}/install/include"
 				],
 				"links[:!macos+:!debug]": [
-					"${externalBuild:sfml}/install/lib/${ar:sfml-graphics}",
-					"${externalBuild:sfml}/install/lib/${ar:sfml-audio}",
-					"${externalBuild:sfml}/install/lib/${ar:sfml-network}",
-					"${externalBuild:sfml}/install/lib/${ar:sfml-window}",
-					"${externalBuild:sfml}/install/lib/${ar:sfml-system}"
+					"${externalBuild:sfml}/install/lib/${so:sfml-graphics}",
+					"${externalBuild:sfml}/install/lib/${so:sfml-audio}",
+					"${externalBuild:sfml}/install/lib/${so:sfml-network}",
+					"${externalBuild:sfml}/install/lib/${so:sfml-window}",
+					"${externalBuild:sfml}/install/lib/${so:sfml-system}"
 				],
 				"links[:!macos+:debug]": [
-					"${externalBuild:sfml}/install/lib/${ar:sfml-graphics-d}",
-					"${externalBuild:sfml}/install/lib/${ar:sfml-audio-d}",
-					"${externalBuild:sfml}/install/lib/${ar:sfml-network-d}",
-					"${externalBuild:sfml}/install/lib/${ar:sfml-window-d}",
-					"${externalBuild:sfml}/install/lib/${ar:sfml-system-d}"
+					"${externalBuild:sfml}/install/lib/${so:sfml-graphics-d}",
+					"${externalBuild:sfml}/install/lib/${so:sfml-audio-d}",
+					"${externalBuild:sfml}/install/lib/${so:sfml-network-d}",
+					"${externalBuild:sfml}/install/lib/${so:sfml-window-d}",
+					"${externalBuild:sfml}/install/lib/${so:sfml-system-d}"
 				],
 				"links[:macos]": [
 					"${externalBuild:sfml}/lib/${so:sfml-graphics}",
