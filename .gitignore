@@ -9,8 +9,9 @@ dist/
 .idea/
 .vs/
 .vscode/
-.fleet/
+.zed/
 
 # Other
+.cache/
 Thumbs.db
 .DS_Store
