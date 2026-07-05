@@ -5,7 +5,7 @@
 		"sfml": {
 			"kind": "git",
 			"repository": "https://github.com/SFML/SFML.git",
-			"tag": "3.0.1"
+			"tag": "3.1.0"
 		}
 	},
 	"package": {
@@ -20,26 +20,19 @@
 				"includeDirs": [
 					"${externalBuild:sfml}/install/include"
 				],
-				"links[:!macos+:!debug]": [
+				"links[:!debug]": [
 					"${externalBuild:sfml}/install/lib/${so:sfml-graphics}",
 					"${externalBuild:sfml}/install/lib/${so:sfml-audio}",
 					"${externalBuild:sfml}/install/lib/${so:sfml-network}",
 					"${externalBuild:sfml}/install/lib/${so:sfml-window}",
 					"${externalBuild:sfml}/install/lib/${so:sfml-system}"
 				],
-				"links[:!macos+:debug]": [
+				"links[:debug]": [
 					"${externalBuild:sfml}/install/lib/${so:sfml-graphics-d}",
 					"${externalBuild:sfml}/install/lib/${so:sfml-audio-d}",
 					"${externalBuild:sfml}/install/lib/${so:sfml-network-d}",
 					"${externalBuild:sfml}/install/lib/${so:sfml-window-d}",
 					"${externalBuild:sfml}/install/lib/${so:sfml-system-d}"
-				],
-				"links[:macos]": [
-					"${externalBuild:sfml}/lib/${so:sfml-graphics}",
-					"${externalBuild:sfml}/lib/${so:sfml-audio}",
-					"${externalBuild:sfml}/lib/${so:sfml-network}",
-					"${externalBuild:sfml}/lib/${so:sfml-window}",
-					"${externalBuild:sfml}/lib/${so:sfml-system}"
 				],
 				"links[:linux+toolchain:!w64-mingw32]": [
 					"X11"
@@ -49,16 +42,7 @@
 				],
 				"appleFrameworks": [
 					"CoreFoundation",
-					"CoreGraphics",
-					"FLAC",
-					"freetype",
-					"ogg",
-					"vorbis",
-					"vorbisenc",
-					"vorbisfile"
-				],
-				"appleFrameworkPaths": [
-					"${external:sfml}/extlibs/libs-osx/Frameworks"
+					"CoreGraphics"
 				]
 			}
 		}
